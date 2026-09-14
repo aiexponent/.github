@@ -1,0 +1,122 @@
+# Reusable secret scan for every repo in the aiexponent org.
+#
+# Two traps this file exists to avoid. Do not undo either one.
+#
+# Trap 1: gitleaks/gitleaks-action is commercially licensed for
+# organization-owned repositories. On an org repo it exits with
+# "is an organization. License key is required." The gitleaks binary
+# itself is MIT and free, so this workflow downloads the binary and
+# never uses the action.
+#
+# Trap 2: "gitleaks protect" scans the uncommitted working tree and
+# ignores --log-opts entirely. In CI the tree is clean, so protect
+# reports "0 commits scanned" and can never fail. That bug was live in
+# two repos in this estate. Use "gitleaks detect" with --log-opts for a
+# commit range, and full history on push.
+#
+# WHAT MAKES THIS JOB RED:
+#   1. gitleaks detect finds a secret in the scanned commit range, or in
+#      full history on a push event. gitleaks exits 1 and the step fails.
+#   2. The download, checksum verification, or extraction of the binary
+#      fails, so no scan ran. "set -euo pipefail" turns that into a
+#      failure rather than a skipped scan.
+#   3. The commit range resolves to zero commits on a pull request. That
+#      would mean the gate is looking at nothing, so the job fails loudly
+#      instead of passing green.
+# There is no continue-on-error and no "|| true" anywhere in this file.
+
+name: gitleaks
+
+on:
+  workflow_call:
+    inputs:
+      gitleaks-version:
+        description: Pinned gitleaks release to download, without the leading v.
+        required: false
+        type: string
+        default: 8.30.1
+      config-path:
+        description: Path to a .gitleaks.toml in the calling repo. Empty uses the built-in rules.
+        required: false
+        type: string
+        default: ""
+      extra-args:
+        description: Additional gitleaks flags, for example --baseline-path.
+        required: false
+        type: string
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout with full history
+        uses: actions/checkout@v4
+        with:
+          # detect walks git log, so a shallow clone would silently
+          # narrow the scan. Full history is required, not optional.
+          fetch-depth: 0
+
+      - name: Install gitleaks binary
+        env:
+          VERSION: ${{ inputs.gitleaks-version }}
+        run: |
+          set -euo pipefail
+          cd "$(mktemp -d)"
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${VERSION}"
+          curl --fail --silent --show-error --location -o gitleaks.tar.gz \
+            "${base}/gitleaks_${VERSION}_linux_x64.tar.gz"
+          curl --fail --silent --show-error --location -o checksums.txt \
+            "${base}/gitleaks_${VERSION}_checksums.txt"
+          grep " gitleaks_${VERSION}_linux_x64.tar.gz\$" checksums.txt \
+            | sed "s|gitleaks_${VERSION}_linux_x64.tar.gz|gitleaks.tar.gz|" \
+            | sha256sum --check -
+          tar -xzf gitleaks.tar.gz gitleaks
+          install -m 0755 gitleaks /usr/local/bin/gitleaks
+          gitleaks version
+
+      - name: Resolve config flag
+        id: cfg
+        env:
+          CONFIG_PATH: ${{ inputs.config-path }}
+        run: |
+          set -euo pipefail
+          if [ -n "${CONFIG_PATH}" ]; then
+            if [ ! -f "${CONFIG_PATH}" ]; then
+              echo "config-path '${CONFIG_PATH}' does not exist in this repo" >&2
+              exit 1
+            fi
+            echo "flag=--config=${CONFIG_PATH}" >> "$GITHUB_OUTPUT"
+          else
+            echo "flag=" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Scan PR diff
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          CONFIG_FLAG: ${{ steps.cfg.outputs.flag }}
+          EXTRA_ARGS: ${{ inputs.extra-args }}
+        run: |
+          set -euo pipefail
+          count=$(git rev-list --count "${BASE_SHA}..${HEAD_SHA}")
+          echo "commits in range: ${count}"
+          if [ "${count}" -eq 0 ]; then
+            echo "range ${BASE_SHA}..${HEAD_SHA} holds no commits, so the scan would prove nothing" >&2
+            exit 1
+          fi
+          gitleaks detect --redact --no-banner ${CONFIG_FLAG} ${EXTRA_ARGS} \
+            --log-opts="${BASE_SHA}..${HEAD_SHA}"
+
+      - name: Scan full history (push)
+        if: github.event_name != 'pull_request'
+        env:
+          CONFIG_FLAG: ${{ steps.cfg.outputs.flag }}
+          EXTRA_ARGS: ${{ inputs.extra-args }}
+        run: |
+          set -euo pipefail
+          gitleaks detect --redact --no-banner ${CONFIG_FLAG} ${EXTRA_ARGS}

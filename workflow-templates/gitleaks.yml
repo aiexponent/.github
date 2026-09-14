@@ -1,0 +1,13 @@
+name: Secret scan
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+
+permissions:
+  contents: read
+
+jobs:
+  gitleaks:
+    uses: aiexponent/.github/.github/workflows/gitleaks.yml@main

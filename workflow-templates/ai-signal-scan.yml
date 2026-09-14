@@ -1,0 +1,13 @@
+name: Human voice gate
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+
+permissions:
+  contents: read
+
+jobs:
+  ai-signal-scan:
+    uses: aiexponent/.github/.github/workflows/ai-signal-scan.yml@main

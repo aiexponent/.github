@@ -1,0 +1,15 @@
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  publish:
+    uses: aiexponent/.github/.github/workflows/python-publish.yml@main
+    permissions:
+      contents: read
+      id-token: write
+    with:
+      # riskforge uses pypi-publish. Match the PyPI trusted publisher.
+      environment: pypi
