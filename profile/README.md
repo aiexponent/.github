@@ -404,11 +404,52 @@ Commercial AI agent governance platform. Real-time policy enforcement, audit log
 
 ---
 
-## Contributing
+## Contributing & Community
 
-All tools are **Apache 2.0 licensed**. Contributions welcome.
+AiExponent is built in the open under the **Apache 2.0 License**. We welcome contributions from developers, AI safety researchers, compliance officers, and legal technologists.
 
-The easiest contribution requires **zero Python** — add a risk question, a license pattern, or a benchmark metric by editing a YAML file. See `CONTRIBUTING.md` in each repository.
+### ⚡ 10-Minute Low-Code Contribution Pathways
+
+You do not need to write Python code to contribute. AI compliance requires precise regulatory knowledge and real-world evaluation data. You can make an immediate impact by editing simple YAML or JSON files:
+
+| Track | Target Tool | What You Contribute | Getting Started (< 10 Mins) |
+| :--- | :--- | :--- | :--- |
+| **Risk Question Bank** | [`riskforge`](https://github.com/aiexponent/riskforge) | Annex III risk questions, mitigations, ISO 42001 / NIST mappings | Add questions in [`src/riskforge/_data/question_bank/`](https://github.com/aiexponent/riskforge/tree/main/src/riskforge/_data/question_bank). |
+| **License Policies** | [`license-compliance-checker`](https://github.com/aiexponent/license-compliance-checker) | Regulatory policy rules, RAIL patterns, open model licenses | Add policies in [`policy/templates/`](https://github.com/aiexponent/license-compliance-checker/tree/main/policy/templates). |
+| **RAG Golden Datasets** | [`rag-benchmarking`](https://github.com/aiexponent/rag-benchmarking) | Domain question-context-answer ground-truth evaluation pairs | Add evaluation entries to [`data/golden/qa.jsonl`](https://github.com/aiexponent/rag-benchmarking/blob/main/data/golden/qa.jsonl). |
+| **Prohibited Scenarios** | [`litmusai`](https://github.com/aiexponent/litmusai) | Article 5 screening edge cases and test portfolios | Add portfolio YAML fixtures to [`tests/fixtures/portfolio/`](https://github.com/aiexponent/litmusai/tree/main/tests/fixtures/portfolio). |
+
+> 🏷️ **Looking for a starter issue?** Browse beginner-friendly tasks across the entire organization:  
+> 👉 **[Explore "Good First Issues" Across AiExponent](https://github.com/search?q=org%3Aaiexponent+is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)**
+
+---
+
+### 🛡️ Community Health & Governance
+
+| Document | Purpose & Scope | Direct Link |
+| :--- | :--- | :--- |
+| **Contributing Guide** | Development setup, conventional commits, and PR checklist | [`CONTRIBUTING.md`](https://github.com/aiexponent/.github/blob/main/CONTRIBUTING.md) |
+| **Security Policy** | 48-hour SLA vulnerability reporting and coordinated disclosure | [`SECURITY.md`](https://github.com/aiexponent/.github/blob/main/SECURITY.md) |
+| **Code of Conduct** | Contributor Covenant standards for welcoming and inclusive participation | [`CODE_OF_CONDUCT.md`](https://github.com/aiexponent/.github/blob/main/CODE_OF_CONDUCT.md) |
+| **Open Source License** | Permissive Apache License 2.0 terms governing all repositories | [`LICENSE`](https://github.com/aiexponent/.github/blob/main/LICENSE) |
+
+---
+
+### 🔐 Coordinated Security Disclosure
+
+AiExponent tools evaluate high-stakes regulatory compliance. If you discover a potential security vulnerability or algorithmic integrity issue:
+- **Do NOT open a public GitHub issue or discussion.**
+- Email our security engineering team directly at **[security@aiexponent.com](mailto:security@aiexponent.com)**.
+- **SLA Commitment**: We acknowledge all reports within **48 hours** and provide a preliminary risk assessment within **5 business days**.
+- Security researchers acting in good faith operate under full safe harbor. See our full [Security Policy](https://github.com/aiexponent/.github/blob/main/SECURITY.md) for details.
+
+---
+
+### 💬 Community & Discussions
+
+Join fellow AI engineers, compliance architects, and security leads:
+- 💬 **Technical Q&A & Proposals**: [litmusai GitHub Discussions](https://github.com/aiexponent/litmusai/discussions)
+- 📧 **General Inquiries**: [hello@aiexponent.com](mailto:hello@aiexponent.com)
 
 ---
 
