@@ -60,6 +60,10 @@ pip install litmus-screener
 litmus screen --describe "a chatbot for mental-health support for teenagers"
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/litmus-terminal.svg" alt="LitmusAI CLI Terminal Execution Preview — Article 5 Prohibited Practice Screening" width="100%"/>
+</p>
+
 Free, deterministic CLI screener for the **eight prohibited-practice categories** of Article 5. Per-category **Red / Amber / Clear** verdict with regulatory citations, confidence levels, and remediation — in under 60 seconds, fully offline.
 
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
@@ -77,6 +81,10 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
 pip install license-compliance-checker
 lcc scan . --policy eu-ai-act-compliance --format json
 ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/license-compliance-terminal.svg" alt="License Compliance Checker Terminal Execution Preview — GPAI & Model License Scanning" width="100%"/>
+</p>
 
 The only open-source scanner that combines dependency license detection, AI model license analysis (HuggingFace Hub API, GGUF, ONNX), and EU AI Act Article 53 compliance — in a single command.
 
@@ -117,12 +125,17 @@ riskforge assess <system-id> --assessor-name "..." --assessor-role "..."
 riskforge export <system-id> --format pdf
 ```
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/riskforge-terminal.svg" alt="RiskForge CLI Terminal Execution Preview — 8-Dimension Risk Assessment" width="100%"/>
+</p>
+
 Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern matching, SHA-256 hash-chained audit trail. Article 9 documentation in ~30 minutes.
 
 **Output:** Signed PDF + `rmf.json` — Article 9 / Annex IV Risk Management File for regulator submission.
 
 [![PyPI](https://img.shields.io/pypi/v/riskforge.svg?style=flat-square)](https://pypi.org/project/riskforge/)
 [![CI](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions)
+
 
 ---
 
