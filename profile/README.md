@@ -396,11 +396,13 @@ Designed for the EU AI Act. Cross-mapped to every active framework:
 
 ---
 
-## Enterprise: Sigil
+## Beyond Open Source: Enterprise & Advisory
 
-Commercial AI agent governance platform. Real-time policy enforcement, audit logging, and compliance reporting for AI agents in production.
+> 💡 **Open-Source Guarantee**: All AiExponent CLI tools and screening engines (`litmusai`, `riskforge`, `license-compliance-checker`, `rag-benchmarking`, `agentic-document-analyser`) remain **100% free**, **Apache 2.0 licensed**, and operate strictly offline with **zero telemetry**. For enterprise production runtime enforcement and executive AI compliance advisory, we offer dedicated commercial platforms and bespoke strategic services:
 
-→ [aiexponent.com/products#sigil](https://aiexponent.com/products#sigil)
+| 🛡️ Sigil &mdash; Enterprise Runtime Platform | 👔 AiExponent Advisory &mdash; Executive Strategy |
+| :--- | :--- |
+| **Commercial AI Agent Governance & Observability**<br><br>While our open-source tools evaluate systems and licenses prior to deployment, **Sigil** enforces policy boundaries in live multi-agent production environments:<br><br>• **Real-Time Guardrails**: Dynamic interception of non-compliant autonomous agent actions & tool calls.<br>• **Cryptographic Audit Replay**: Tamper-evident execution logs satisfying EU AI Act Art. 12 & ISO 42001.<br>• **Continuous Drift & Risk Telemetry**: Automated alerts on safety posture and prompt degradation.<br>• **Article 14 Human-in-the-Loop**: Configurable escalation triggers and operational kill-switches.<br><br>[![Request Early Access](https://img.shields.io/badge/Enterprise_Platform-Request_Early_Access-0D5463?style=flat-square&logo=shield&logoColor=white)](https://aiexponent.com/products?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel#sigil)<br>👉 [Explore Sigil on aiexponent.com →](https://aiexponent.com/products?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel#sigil) | **Bespoke AI Compliance & Governance Consulting**<br><br>Strategic guidance for CISOs, General Counsel, and VP-level engineering leadership navigating mandatory global regulatory deadlines:<br><br>• **Executive Readiness Reviews**: Comprehensive gap analysis across EU AI Act, NIST AI RMF, and ISO 42001.<br>• **Annex III High-Risk Classification**: Authoritative scoping and risk classification audits.<br>• **Article 4 AI Literacy Programs**: Board- and engineering-level workforce certification curricula.<br>• **Conformity Assessment Roadmaps**: Fast-track documentation sprints for notified-body filing.<br><br>[![Book Consultation](https://img.shields.io/badge/Executive_Advisory-Book_Consultation-0D5463?style=flat-square&logo=googlemeet&logoColor=white)](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel)<br>👉 [Schedule an Advisory Session on AskAjay.ai →](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel) |
 
 ---
 
