@@ -336,6 +336,31 @@ High-throughput, multi-agent document intelligence engine for EU AI Act Article 
 
 ---
 
+<div align="center">
+
+<h3>🔌 Ecosystem Compatibility & Integrations</h3>
+<p><sub>INTEGRATES SEAMLESSLY WITH YOUR PRODUCTION AI & COMPLIANCE STACK</sub></p>
+
+<p>
+  <a href="https://www.langchain.com"><img src="https://img.shields.io/badge/LangChain-Supported-1C3C3C?style=flat-square&logo=langchain&logoColor=white" alt="LangChain"/></a>
+  <a href="https://www.llamaindex.ai"><img src="https://img.shields.io/badge/LlamaIndex-Ready-8A2BE2?style=flat-square" alt="LlamaIndex"/></a>
+  <a href="https://huggingface.co"><img src="https://img.shields.io/badge/Hugging_Face-Hub_&_Models-FFD21E?style=flat-square&logo=huggingface&logoColor=black" alt="Hugging Face"/></a>
+  <a href="https://github.com/ggerganov/ggml"><img src="https://img.shields.io/badge/GGUF-Local_Inference-0D5463?style=flat-square" alt="GGUF"/></a>
+  <a href="https://onnxruntime.ai"><img src="https://img.shields.io/badge/ONNX-Runtime-005CED?style=flat-square&logo=onnx&logoColor=white" alt="ONNX Runtime"/></a>
+</p>
+<p>
+  <a href="https://cyclonedx.org"><img src="https://img.shields.io/badge/CycloneDX-SBOM_1.5-0085CA?style=flat-square" alt="CycloneDX"/></a>
+  <a href="https://spdx.dev"><img src="https://img.shields.io/badge/SPDX-2.3_%2F_3.0-438440?style=flat-square" alt="SPDX"/></a>
+  <a href="https://sarifweb.azurewebsites.net"><img src="https://img.shields.io/badge/SARIF-OASIS_Standard-005A9C?style=flat-square" alt="SARIF"/></a>
+  <a href="https://www.docker.com"><img src="https://img.shields.io/badge/Docker-Containers-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker"/></a>
+  <a href="https://www.nist.gov/itl/ai-risk-management-framework"><img src="https://img.shields.io/badge/NIST-AI_RMF_1.0-0D5463?style=flat-square" alt="NIST AI RMF"/></a>
+  <a href="https://www.iso.org/standard/81230.html"><img src="https://img.shields.io/badge/ISO%2FIEC-42001:2023-0D5463?style=flat-square" alt="ISO/IEC 42001"/></a>
+</p>
+
+</div>
+
+---
+
 ## The Compound Moat
 
 Upstream of everything, **LitmusAI** (Art. 5) is the go/no-go gate — screen for prohibited practices *before* you invest in compliance evidence. The four specialized tools below then form an integrated pipeline: each produces structured evidence consumed by the next, together covering the technical documentation required for high-risk AI system compliance.
