@@ -82,21 +82,37 @@ To update topics:
 
 ## 5. Upload Branded Social Preview Cards (1280×640)
 
-Standardized 1280×640 PNG cards have been generated and version-controlled under `profile/brand/social-cards/` (with backwards-compatible mirrors in `profile/social-previews/`). Upload each image to its respective repository settings:
+Standardized 1280×640 PNG cards have been generated and version-controlled under `profile/brand/social-cards/` in both **Dark (Obsidian `#0F1419`)** and **Light (Warm Sand `#FAF7F2`)** variants (with backwards-compatible mirrors in `profile/social-previews/`).
 
-| Repository | OpenGraph Card Path | Direct Settings Upload Link |
-| :--- | :--- | :--- |
-| **`aiexponent/.github`** (Org & Profile) | [`profile/brand/social-cards/og-aiexponent-org.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-aiexponent-org.png) | [https://github.com/aiexponent/.github/settings](https://github.com/aiexponent/.github/settings) |
-| **`litmusai`** | [`profile/brand/social-cards/og-litmusai.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-litmusai.png) | [https://github.com/aiexponent/litmusai/settings](https://github.com/aiexponent/litmusai/settings) |
-| **`riskforge`** | [`profile/brand/social-cards/og-riskforge.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-riskforge.png) | [https://github.com/aiexponent/riskforge/settings](https://github.com/aiexponent/riskforge/settings) |
-| **`license-compliance-checker`** | [`profile/brand/social-cards/og-license-compliance-checker.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-license-compliance-checker.png) | [https://github.com/aiexponent/license-compliance-checker/settings](https://github.com/aiexponent/license-compliance-checker/settings) |
-| **`rag-benchmarking`** | [`profile/brand/social-cards/og-rag-benchmarking.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-rag-benchmarking.png) | [https://github.com/aiexponent/rag-benchmarking/settings](https://github.com/aiexponent/rag-benchmarking/settings) |
-| **`agentic-document-analyser`** | [`profile/brand/social-cards/og-agentic-document-analyser.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-agentic-document-analyser.png) | [https://github.com/aiexponent/agentic-document-analyser/settings](https://github.com/aiexponent/agentic-document-analyser/settings) |
+### Repository Social Preview Upload Matrix:
 
-### How to upload:
+Upload your preferred theme variant (Dark recommended for enterprise developer branding, or Light for daytime high-key appearance) to each repository's settings:
+
+| Repository | Dark Variant (Obsidian) | Light Variant (Sand) | Direct Settings Upload Link |
+| :--- | :--- | :--- | :--- |
+| **`aiexponent/.github`** (Org & Profile) | [`social-cards/dark/og-aiexponent-org.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-aiexponent-org.png) | [`social-cards/light/og-aiexponent-org.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-aiexponent-org.png) | [https://github.com/aiexponent/.github/settings](https://github.com/aiexponent/.github/settings) |
+| **`litmusai`** | [`social-cards/dark/og-litmusai.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-litmusai.png) | [`social-cards/light/og-litmusai.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-litmusai.png) | [https://github.com/aiexponent/litmusai/settings](https://github.com/aiexponent/litmusai/settings) |
+| **`riskforge`** | [`social-cards/dark/og-riskforge.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-riskforge.png) | [`social-cards/light/og-riskforge.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-riskforge.png) | [https://github.com/aiexponent/riskforge/settings](https://github.com/aiexponent/riskforge/settings) |
+| **`license-compliance-checker`** | [`social-cards/dark/og-license-compliance-checker.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-license-compliance-checker.png) | [`social-cards/light/og-license-compliance-checker.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-license-compliance-checker.png) | [https://github.com/aiexponent/license-compliance-checker/settings](https://github.com/aiexponent/license-compliance-checker/settings) |
+| **`rag-benchmarking`** | [`social-cards/dark/og-rag-benchmarking.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-rag-benchmarking.png) | [`social-cards/light/og-rag-benchmarking.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-rag-benchmarking.png) | [https://github.com/aiexponent/rag-benchmarking/settings](https://github.com/aiexponent/rag-benchmarking/settings) |
+| **`agentic-document-analyser`** | [`social-cards/dark/og-agentic-document-analyser.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/dark/og-agentic-document-analyser.png) | [`social-cards/light/og-agentic-document-analyser.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/light/og-agentic-document-analyser.png) | [https://github.com/aiexponent/agentic-document-analyser/settings](https://github.com/aiexponent/agentic-document-analyser/settings) |
+
+### How to upload to GitHub settings:
 1. Open the settings link above for each repository.
 2. Scroll down to the **"Social preview"** section (under General repository settings).
 3. Click **"Edit"** → **"Upload an image..."**.
-4. Select the matching 1280×640 PNG file from `profile/brand/social-cards/` (or `profile/social-previews/`).
+4. Select the matching 1280×640 PNG file from `profile/brand/social-cards/dark/` (or `profile/brand/social-cards/light/`).
 5. GitHub will immediately display the card in the preview box and unfurl it whenever repository URLs are shared.
+
+### Dynamic Theme-Aware Markdown Embedding:
+In repository READMEs and documentation pages, both variants can be embedded dynamically using GitHub's native picture switcher:
+
+```html
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/social-cards/dark/og-litmusai.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/social-cards/light/og-litmusai.png">
+  <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/social-cards/dark/og-litmusai.png" alt="LitmusAI" width="100%"/>
+</picture>
+```
+
 
