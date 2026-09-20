@@ -1,0 +1,6 @@
+{
+  "name": "Publish to PyPI (trusted publishing)",
+  "description": "Builds sdist and wheel, checks metadata, uploads over OIDC with no API token. Red on a bad build or a duplicate version.",
+  "iconName": "octicon upload",
+  "categories": ["Python", "Publishing"]
+}

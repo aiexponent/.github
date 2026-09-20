@@ -1,0 +1,129 @@
+# Reusable human-voice gate. Scans changed text files for AI-writing
+# signals and fails the build on a hit.
+#
+# Why the script is vendored here rather than called from the caller's
+# checkout. The canonical scanner is
+# ~/Code/vibe_skills/hooks/scan-ai-signals.py, a Claude Code PostToolUse
+# hook that reads a JSON tool payload on stdin and warns without
+# blocking. Two things rule it out for CI: the shape is wrong (no file
+# arguments, no failing exit code) and vibe_skills is a private local
+# repo that no runner can see. So this org repo carries a vendored port
+# at .github/scripts/scan-ai-signals-ci.py with the same thresholds in a
+# file-in, exit-code-out shape, and the job checks this repo out
+# alongside the caller to reach it. Callers keep no copy, so one edit
+# here updates all of them. When the canonical signal list changes,
+# update the vendored port in the same change.
+#
+# WHAT MAKES THIS JOB RED:
+#   1. A changed text file carries a signal: more than 2 em-dashes, a
+#      cluster of terms from the AI lexicon, signpost scaffolding, or 2
+#      or more "not just X" constructions. The scanner exits 1.
+#   2. A path in the changed-file list cannot be read. The scanner exits
+#      2 rather than quietly scanning fewer files than it was given.
+#   3. The vendored scanner is missing from the tooling checkout. The
+#      guard step fails, so a broken gate never reports green.
+#   4. Resolving the changed-file range fails, for example because the
+#      base commit was never fetched. "set -euo pipefail" makes that a
+#      failure.
+#
+# A run with zero changed text files passes, and says so in the log. That
+# is an honest pass: the gate looked and there was nothing in scope.
+# There is no continue-on-error anywhere in this file.
+
+name: ai-signal-scan
+
+on:
+  workflow_call:
+    inputs:
+      paths:
+        description: >-
+          Space separated shell globs selecting which changed files are in
+          scope for the scan.
+        required: false
+        type: string
+        default: "*.md *.mdx *.txt *.rst"
+      scan-all:
+        description: Scan every tracked file in scope instead of only the changed ones.
+        required: false
+        type: boolean
+        default: false
+      tooling-ref:
+        description: Ref of aiexponent/.github to take the vendored scanner from.
+        required: false
+        type: string
+        default: main
+
+permissions:
+  contents: read
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the calling repo
+        uses: actions/checkout@v4
+        with:
+          # The scan needs the base commit to compute a diff, so a
+          # shallow clone would narrow it without saying so.
+          fetch-depth: 0
+
+      - name: Checkout the shared scanner
+        uses: actions/checkout@v4
+        with:
+          repository: aiexponent/.github
+          ref: ${{ inputs.tooling-ref }}
+          path: .ai-signal-tooling
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Confirm the scanner is present
+        run: |
+          set -euo pipefail
+          script=.ai-signal-tooling/.github/scripts/scan-ai-signals-ci.py
+          if [ ! -f "${script}" ]; then
+            echo "vendored scanner missing at ${script}, refusing to report a pass" >&2
+            exit 1
+          fi
+
+      - name: Collect files in scope
+        id: files
+        env:
+          SCOPE: ${{ inputs.paths }}
+          SCAN_ALL: ${{ inputs.scan-all }}
+          EVENT: ${{ github.event_name }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          BEFORE_SHA: ${{ github.event.before }}
+        run: |
+          set -euo pipefail
+          # shellcheck disable=SC2086
+          read -r -a globs <<< "${SCOPE}"
+          if [ "${SCAN_ALL}" = "true" ]; then
+            git ls-files -z -- "${globs[@]}" > files.z
+          elif [ "${EVENT}" = "pull_request" ]; then
+            git diff -z --name-only --diff-filter=ACMR \
+              "${BASE_SHA}" "${HEAD_SHA}" -- "${globs[@]}" > files.z
+          elif [ -n "${BEFORE_SHA:-}" ] && [ "${BEFORE_SHA}" != "0000000000000000000000000000000000000000" ]; then
+            git diff -z --name-only --diff-filter=ACMR \
+              "${BEFORE_SHA}" "${GITHUB_SHA}" -- "${globs[@]}" > files.z
+          else
+            # New branch or tag push with no usable previous commit, so
+            # there is no range to diff. Scan everything in scope.
+            git ls-files -z -- "${globs[@]}" > files.z
+          fi
+          count=$(tr -cd '\0' < files.z | wc -c | tr -d ' ')
+          echo "files in scope: ${count}"
+          tr '\0' '\n' < files.z
+          echo "count=${count}" >> "$GITHUB_OUTPUT"
+
+      - name: Scan for AI-writing signals
+        run: |
+          set -euo pipefail
+          if [ ! -s files.z ]; then
+            echo "no text files in scope for this change"
+            exit 0
+          fi
+          xargs -0 python3 \
+            .ai-signal-tooling/.github/scripts/scan-ai-signals-ci.py < files.z

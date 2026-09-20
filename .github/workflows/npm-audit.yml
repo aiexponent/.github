@@ -1,0 +1,79 @@
+# Reusable dependency audit for Node repos.
+#
+# This gate is allowed to fail, and that is the whole point. One repo in
+# this estate carries "continue-on-error: true" on its audit step, so its
+# green check has never meant anything. Do not add that here, and do not
+# append "|| true" to the audit command.
+#
+# WHAT MAKES THIS JOB RED:
+#   1. "npm audit --audit-level=high" finds an advisory at high or
+#      critical severity. npm exits non-zero and the step fails.
+#   2. The lockfile is missing or out of sync with package.json, so
+#      "npm ci" fails. An audit against an unresolved tree would be
+#      meaningless, so this fails rather than falling back to install.
+#   3. The audit command itself errors, for example the registry is
+#      unreachable. "set -euo pipefail" surfaces that as a failure
+#      instead of an empty report read as clean.
+#
+# To accept a specific unfixable advisory, add it to the calling repo's
+# .npmrc or an "overrides" block with a dated comment saying why. Never
+# silence the whole gate.
+
+name: npm-audit
+
+on:
+  workflow_call:
+    inputs:
+      node-version:
+        description: Node version used for the audit.
+        required: false
+        type: string
+        default: "20"
+      working-directory:
+        description: Directory holding package.json and the lockfile.
+        required: false
+        type: string
+        default: "."
+      audit-level:
+        description: Lowest severity that fails the job.
+        required: false
+        type: string
+        default: high
+      production-only:
+        description: Audit only runtime dependencies, skipping devDependencies.
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ${{ inputs.working-directory }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ inputs.node-version }}
+
+      - name: Install from the lockfile
+        run: |
+          set -euo pipefail
+          npm ci
+
+      - name: Audit dependencies
+        env:
+          AUDIT_LEVEL: ${{ inputs.audit-level }}
+          PRODUCTION_ONLY: ${{ inputs.production-only }}
+        run: |
+          set -euo pipefail
+          args=(audit "--audit-level=${AUDIT_LEVEL}")
+          if [ "${PRODUCTION_ONLY}" = "true" ]; then
+            args+=(--omit=dev)
+          fi
+          npm "${args[@]}"

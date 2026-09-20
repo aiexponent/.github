@@ -1,0 +1,6 @@
+{
+  "name": "Human voice gate (AI-signal scan)",
+  "description": "Scans changed text files for AI-writing signals. Red on more than 2 em-dashes, a lexicon cluster, signpost scaffolding, or repeated negation constructions.",
+  "iconName": "octicon typography",
+  "categories": ["Content", "Quality"]
+}

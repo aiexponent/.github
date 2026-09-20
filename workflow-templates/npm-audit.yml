@@ -1,0 +1,15 @@
+name: Dependency audit
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+  schedule:
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  npm-audit:
+    uses: aiexponent/.github/.github/workflows/npm-audit.yml@main

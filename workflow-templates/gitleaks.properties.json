@@ -1,0 +1,6 @@
+{
+  "name": "Secret scan (gitleaks)",
+  "description": "Scans the PR commit range, and full history on push, with the MIT gitleaks binary. Red when a secret is found.",
+  "iconName": "octicon shield-lock",
+  "categories": ["Security"]
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Dependency audit (npm)",
+  "description": "Runs npm ci then npm audit at high severity. Red on any high or critical advisory. No continue-on-error.",
+  "iconName": "octicon package-dependencies",
+  "categories": ["Security", "Node"]
+}
