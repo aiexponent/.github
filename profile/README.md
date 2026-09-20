@@ -8,10 +8,10 @@
     </picture>
   </a>
   <p>
-    <a href="https://aiexponent.com"><img src="https://img.shields.io/badge/Website-aiexponent.com-0D5463?style=flat-square" alt="Website"/></a>
-    <a href="https://pypi.org/org/AiExponent/"><img src="https://img.shields.io/badge/PyPI-AiExponent-0D5463?style=flat-square" alt="PyPI"/></a>
-    <img src="https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square" alt="License"/>
-    <img src="https://img.shields.io/badge/EU_AI_Act-Enforcement_Active-9D2929?style=flat-square" alt="EU AI Act"/>
+    <a href="https://aiexponent.com"><img src="https://img.shields.io/badge/Website-aiexponent.com-0D5463?style=flat-square&logo=googlechrome&logoColor=white" alt="Website"/></a>
+    <a href="https://pypi.org/org/AiExponent/"><img src="https://img.shields.io/badge/PyPI-AiExponent-0D5463?style=flat-square&logo=pypi&logoColor=white" alt="PyPI"/></a>
+    <a href="https://github.com/aiexponent/.github/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square&logo=apache&logoColor=white" alt="License"/></a>
+    <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"><img src="https://img.shields.io/badge/EU_AI_Act-Active_Enforcement-9D2929?style=flat-square&logo=europeanunion&logoColor=white" alt="EU AI Act Active Enforcement"/></a>
   </p>
 </div>
 
@@ -120,8 +120,10 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
 
 </details>
 
-[![PyPI](https://img.shields.io/pypi/v/litmus-screener.svg?style=flat-square)](https://pypi.org/project/litmus-screener/)
-[![CI](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/litmusai/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/litmus-screener?style=flat-square&color=0D5463&logo=pypi&logoColor=white)](https://pypi.org/project/litmus-screener/)
+[![Downloads](https://img.shields.io/pypi/dm/litmus-screener?style=flat-square&color=0D5463)](https://pypi.org/project/litmus-screener/)
+[![Python Support](https://img.shields.io/pypi/pyversions/litmus-screener?style=flat-square&color=0D5463&logo=python&logoColor=white)](https://pypi.org/project/litmus-screener/)
+[![CI Build](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml)
 
 ---
 
@@ -190,8 +192,10 @@ The only open-source scanner that combines dependency license detection, AI mode
 
 </details>
 
-[![PyPI](https://img.shields.io/pypi/v/license-compliance-checker.svg?style=flat-square)](https://pypi.org/project/license-compliance-checker/)
-[![CI](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/license-compliance-checker/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/license-compliance-checker?style=flat-square&color=0D5463&logo=pypi&logoColor=white)](https://pypi.org/project/license-compliance-checker/)
+[![Downloads](https://img.shields.io/pypi/dm/license-compliance-checker?style=flat-square&color=0D5463)](https://pypi.org/project/license-compliance-checker/)
+[![Python Support](https://img.shields.io/pypi/pyversions/license-compliance-checker?style=flat-square&color=0D5463&logo=python&logoColor=white)](https://pypi.org/project/license-compliance-checker/)
+[![CI Build](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml)
 
 ---
 
@@ -245,8 +249,10 @@ Framework-agnostic evaluation harness for RAG and agentic AI systems. 12 metrics
 
 </details>
 
-[![PyPI](https://img.shields.io/pypi/v/rag-benchmarking.svg?style=flat-square)](https://pypi.org/project/rag-benchmarking/)
-[![CI](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/rag-benchmarking/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/rag-benchmarking?style=flat-square&color=0D5463&logo=pypi&logoColor=white)](https://pypi.org/project/rag-benchmarking/)
+[![Downloads](https://img.shields.io/pypi/dm/rag-benchmarking?style=flat-square&color=0D5463)](https://pypi.org/project/rag-benchmarking/)
+[![Python Support](https://img.shields.io/pypi/pyversions/rag-benchmarking?style=flat-square&color=0D5463&logo=python&logoColor=white)](https://pypi.org/project/rag-benchmarking/)
+[![CI Build](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml)
 
 ---
 
@@ -303,8 +309,10 @@ Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern mat
 
 </details>
 
-[![PyPI](https://img.shields.io/pypi/v/riskforge.svg?style=flat-square)](https://pypi.org/project/riskforge/)
-[![CI](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions)
+[![PyPI Version](https://img.shields.io/pypi/v/riskforge?style=flat-square&color=0D5463&logo=pypi&logoColor=white)](https://pypi.org/project/riskforge/)
+[![Downloads](https://img.shields.io/pypi/dm/riskforge?style=flat-square&color=0D5463)](https://pypi.org/project/riskforge/)
+[![Python Support](https://img.shields.io/pypi/pyversions/riskforge?style=flat-square&color=0D5463&logo=python&logoColor=white)](https://pypi.org/project/riskforge/)
+[![CI Build](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml)
 
 
 ---
@@ -322,9 +330,9 @@ High-throughput, multi-agent document intelligence engine for EU AI Act Article 
 
 **Output:** Structured layout analysis (JSON), visual bounding-box audit blocks, and technical documentation risk reports.
 
-[![License](https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser/blob/main/LICENSE)
-[![Architecture](https://img.shields.io/badge/Architecture-Event--Driven_Microservices-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser)
-[![Frontend](https://img.shields.io/badge/Frontend-Next.js_14-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser)
+[![License](https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square&logo=apache&logoColor=white)](https://github.com/aiexponent/agentic-document-analyser/blob/main/LICENSE)
+[![Docker](https://img.shields.io/badge/Docker-Compose_Ready-0D5463?style=flat-square&logo=docker&logoColor=white)](https://github.com/aiexponent/agentic-document-analyser)
+[![Frontend](https://img.shields.io/badge/Frontend-Next.js_14-0D5463?style=flat-square&logo=nextdotjs&logoColor=white)](https://github.com/aiexponent/agentic-document-analyser)
 
 ---
 
