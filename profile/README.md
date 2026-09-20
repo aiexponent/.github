@@ -68,6 +68,58 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
 
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
 
+<details>
+  <summary><b>🔍 Inspect Article 5 Screening Verdict (SARIF 2.1.0)</b></summary>
+
+```json
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "LitmusAI",
+          "version": "1.0.0",
+          "rules": [
+            {
+              "id": "litmusai/5.1.b",
+              "name": "Vulnerability Exploitation",
+              "shortDescription": {
+                "text": "Article 5(1)(b) Exploitation of age, disability, or specific social vulnerability"
+              }
+            }
+          ]
+        }
+      },
+      "results": [
+        {
+          "ruleId": "litmusai/5.1.b",
+          "level": "warning",
+          "message": {
+            "text": "Conversational agent targets minors experiencing psychological distress without clinician escalation safeguards."
+          },
+          "properties": {
+            "verdict": "amber",
+            "confidence": 0.94,
+            "legal_citation": "EU AI Act Art. 5(1)(b)",
+            "triggered_rules": ["VULN-EXPLOIT-AGE-MINOR"]
+          }
+        }
+      ],
+      "properties": {
+        "overall_verdict": "AMBER",
+        "input_hash_sha256": "7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069"
+      }
+    }
+  ]
+}
+```
+
+<sub>📄 <a href="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/artifacts/litmus-screening.sarif">Download Full SARIF Artifact</a> · 📂 <a href="https://github.com/aiexponent/litmusai/tree/main/examples">View litmusai Examples</a></sub>
+
+</details>
+
 [![PyPI](https://img.shields.io/pypi/v/litmus-screener.svg?style=flat-square)](https://pypi.org/project/litmus-screener/)
 [![CI](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/litmusai/actions)
 
@@ -90,6 +142,54 @@ The only open-source scanner that combines dependency license detection, AI mode
 
 **Output:** Article 53 compliance pack — `eu_ai_act_report.json` + CycloneDX SBOM + training data risk summary.
 
+<details>
+  <summary><b>🔍 Inspect Article 53 Compliance Pack (CycloneDX 1.5 + JSON)</b></summary>
+
+```json
+{
+  "$schema": "https://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:3e679927-2b59-4645-a7fb-7008779693bc",
+  "metadata": {
+    "timestamp": "2026-06-15T09:45:00Z",
+    "tools": [
+      {
+        "vendor": "AiExponent",
+        "name": "license-compliance-checker",
+        "version": "1.4.2"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "machine-learning-model",
+      "name": "meta-llama/Llama-3-8B",
+      "licenses": [
+        {
+          "license": {
+            "id": "LicenseRef-Llama-3-Community"
+          }
+        }
+      ],
+      "properties": [
+        { "name": "lcc:regulatory:framework", "value": "eu_ai_act" },
+        { "name": "lcc:regulatory:risk_classification", "value": "general_purpose_ai" },
+        { "name": "lcc:regulatory:eu_ai_act_article_53", "value": "applicable" },
+        { "name": "lcc:regulatory:transparency_required", "value": "true" },
+        { "name": "lcc:regulatory:copyright_compliance", "value": "documented" },
+        { "name": "lcc:regulatory:training_data_sources", "value": "Common Crawl, RefinedWeb, StarCoder, Wikipedia" },
+        { "name": "lcc:regulatory:use_restrictions", "value": "no-military, no-surveillance, high-risk-warning" }
+      ]
+    }
+  ]
+}
+```
+
+<sub>📄 <a href="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/artifacts/license-compliance-cyclonedx.json">Download Full CycloneDX SBOM</a> · 📂 <a href="https://github.com/aiexponent/license-compliance-checker/blob/main/policy/templates/eu_ai_act.yaml">View LCC EU AI Act Policy Template</a></sub>
+
+</details>
+
 [![PyPI](https://img.shields.io/pypi/v/license-compliance-checker.svg?style=flat-square)](https://pypi.org/project/license-compliance-checker/)
 [![CI](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/license-compliance-checker/actions)
 
@@ -107,6 +207,43 @@ pip install rag-benchmarking
 Framework-agnostic evaluation harness for RAG and agentic AI systems. 12 metrics across classic RAG, retrieval quality, and agentic-era evaluation. Measured faithfulness of **0.958** on the 50-sample golden dataset.
 
 **Output:** `BenchmarkReport` JSON — audit-ready accuracy evidence for Article 15 compliance.
+
+<details>
+  <summary><b>🔍 Inspect Article 15 Accuracy & Robustness Evidence (JSON)</b></summary>
+
+```json
+{
+  "$schema": "https://schemas.aiexponent.com/rag-benchmarking/v1/report.schema.json",
+  "report_id": "rep_rag_20260615_7b3a9c",
+  "pipeline_id": "enterprise-customer-rag-v2",
+  "evaluated_at": "2026-06-15T10:30:00Z",
+  "regulatory_mapping": {
+    "framework": "EU AI Act",
+    "article": "Article 15 (Accuracy, Robustness and Cybersecurity)",
+    "verdict": "PASS"
+  },
+  "metrics": {
+    "faithfulness": 0.958,
+    "answer_relevance": 0.942,
+    "context_recall": 0.915,
+    "context_precision": 0.928,
+    "hallucination_rate": 0.042,
+    "robustness_score": 0.965,
+    "latency_p95_ms": 240,
+    "citation_precision": 0.978
+  },
+  "compliance_summary": {
+    "status": "CONFORMING",
+    "minimum_faithfulness_required": 0.900,
+    "measured_faithfulness": 0.958,
+    "audit_trail_signature": "sha256:d8a29b4e11c52b7a9e3d8f4c2e6b0a1f5c7e9d3b2a8f1e0c4b6d8a2f1e9c7b5a"
+  }
+}
+```
+
+<sub>📄 <a href="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/artifacts/rag-benchmark-report.json">Download Full Benchmark Report</a> · 📂 <a href="https://github.com/aiexponent/rag-benchmarking/blob/main/data/golden/qa.jsonl">View 50-Sample Golden Dataset</a></sub>
+
+</details>
 
 [![PyPI](https://img.shields.io/pypi/v/rag-benchmarking.svg?style=flat-square)](https://pypi.org/project/rag-benchmarking/)
 [![CI](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/rag-benchmarking/actions)
@@ -132,6 +269,39 @@ riskforge export <system-id> --format pdf
 Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern matching, SHA-256 hash-chained audit trail. Article 9 documentation in ~30 minutes.
 
 **Output:** Signed PDF + `rmf.json` — Article 9 / Annex IV Risk Management File for regulator submission.
+
+<details>
+  <summary><b>🔍 Inspect Article 9 Risk Management File (rmf.json)</b></summary>
+
+```json
+{
+  "$schema": "https://schemas.aiexponent.com/riskforge/rmf/v1.0.0",
+  "id": "e9b271d4-8521-4f1a-9694-81d3d6e5a401",
+  "rmf_schema_version": "1.0.0",
+  "generated_at": "2026-06-15T11:00:00Z",
+  "sha256_hash": "4e9a3b8d1f2c6e7a0b5d8f3e2a1c9b8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+  "audit_entry_hash": "a7c8e9f0123456789abcdef0123456789abcdef0123456789abcdef012345678",
+  "register": {
+    "system": {
+      "name": "Consumer Credit Eligibility Screener",
+      "annex_iii_reference": "Annex III point 5(b) (Creditworthiness assessment)"
+    },
+    "dimension_summary": {
+      "discrimination": { "residual_risk": "ACCEPTABLE" },
+      "human_oversight": { "residual_risk": "LOW" },
+      "data_governance": { "residual_risk": "LOW" },
+      "transparency": { "residual_risk": "LOW" }
+    }
+  },
+  "cross_references": [
+    { "article_ref": "Art.9(2)(a)", "iso42001_ref": "Clause A.7", "nist_rmf_ref": "MEASURE 2.9" }
+  ]
+}
+```
+
+<sub>📄 <a href="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/artifacts/riskforge-rmf.json">Download Full rmf.json Artifact</a> · 📂 <a href="https://github.com/aiexponent/riskforge/blob/main/examples/credit-scoring/expected.json">View RiskForge Credit Scoring RMF</a></sub>
+
+</details>
 
 [![PyPI](https://img.shields.io/pypi/v/riskforge.svg?style=flat-square)](https://pypi.org/project/riskforge/)
 [![CI](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions)

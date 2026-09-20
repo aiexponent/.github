@@ -1,0 +1,102 @@
+{
+  "$schema": "https://cyclonedx.org/schema/bom-1.5.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:3e679927-2b59-4645-a7fb-7008779693bc",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-06-15T09:45:00Z",
+    "tools": [
+      {
+        "vendor": "AiExponent",
+        "name": "license-compliance-checker",
+        "version": "1.4.2"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "enterprise-agent-service",
+      "version": "2.1.0"
+    }
+  },
+  "components": [
+    {
+      "type": "machine-learning-model",
+      "name": "meta-llama/Llama-3-8B",
+      "version": "1.0.0",
+      "description": "Meta Llama 3 8B instruction-tuned generative model",
+      "purl": "pkg:huggingface/meta-llama/Meta-Llama-3-8B@1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "LicenseRef-Llama-3-Community",
+            "name": "Meta Llama 3 Community License"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "lcc:regulatory:framework",
+          "value": "eu_ai_act"
+        },
+        {
+          "name": "lcc:regulatory:risk_classification",
+          "value": "general_purpose_ai"
+        },
+        {
+          "name": "lcc:regulatory:eu_ai_act_article_53",
+          "value": "applicable"
+        },
+        {
+          "name": "lcc:regulatory:transparency_required",
+          "value": "true"
+        },
+        {
+          "name": "lcc:regulatory:copyright_compliance",
+          "value": "documented"
+        },
+        {
+          "name": "lcc:regulatory:training_data_sources",
+          "value": "Common Crawl, RefinedWeb, StarCoder, Wikipedia"
+        },
+        {
+          "name": "lcc:regulatory:use_restrictions",
+          "value": "no-military, no-surveillance, high-risk-warning"
+        }
+      ],
+      "externalReferences": [
+        {
+          "type": "documentation",
+          "url": "https://huggingface.co/meta-llama/Meta-Llama-3-8B"
+        }
+      ]
+    },
+    {
+      "type": "library",
+      "name": "langchain-core",
+      "version": "0.3.12",
+      "purl": "pkg:pypi/langchain-core@0.3.12",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "properties": [
+        {
+          "name": "lcc:regulatory:framework",
+          "value": "eu_ai_act"
+        },
+        {
+          "name": "lcc:regulatory:risk_classification",
+          "value": "minimal_risk"
+        },
+        {
+          "name": "lcc:regulatory:eu_ai_act_article_53",
+          "value": "not_applicable"
+        }
+      ]
+    }
+  ]
+}

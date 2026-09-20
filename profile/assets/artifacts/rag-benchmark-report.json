@@ -1,0 +1,44 @@
+{
+  "$schema": "https://schemas.aiexponent.com/rag-benchmarking/v1/report.schema.json",
+  "schema_version": "1.0.0",
+  "report_id": "rep_rag_20260615_7b3a9c",
+  "pipeline_id": "enterprise-customer-rag-v2",
+  "evaluated_at": "2026-06-15T10:30:00Z",
+  "evaluation_context": {
+    "framework": "rag-benchmarking-harness",
+    "version": "1.2.0",
+    "dataset": "golden-qa-50",
+    "dataset_uri": "https://github.com/aiexponent/rag-benchmarking/blob/main/data/golden/qa.jsonl",
+    "sample_count": 50,
+    "model": "gpt-4o-mini",
+    "embedder": "text-embedding-3-small"
+  },
+  "regulatory_mapping": {
+    "framework": "EU AI Act",
+    "article": "Article 15 (Accuracy, Robustness and Cybersecurity)",
+    "threshold_policy": "high_risk_minimum_standards_v1",
+    "verdict": "PASS"
+  },
+  "metrics": {
+    "faithfulness": 0.958,
+    "answer_relevance": 0.942,
+    "context_recall": 0.915,
+    "context_precision": 0.928,
+    "hallucination_rate": 0.042,
+    "semantic_similarity": 0.931,
+    "robustness_score": 0.965,
+    "noise_sensitivity": 0.035,
+    "latency_p95_ms": 240,
+    "citation_precision": 0.978,
+    "groundedness": 0.962,
+    "toxicity_score": 0.000
+  },
+  "compliance_summary": {
+    "status": "CONFORMING",
+    "minimum_faithfulness_required": 0.900,
+    "measured_faithfulness": 0.958,
+    "maximum_hallucination_tolerated": 0.080,
+    "measured_hallucination": 0.042,
+    "audit_trail_signature": "sha256:d8a29b4e11c52b7a9e3d8f4c2e6b0a1f5c7e9d3b2a8f1e0c4b6d8a2f1e9c7b5a"
+  }
+}
