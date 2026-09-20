@@ -82,18 +82,21 @@ To update topics:
 
 ## 5. Upload Branded Social Preview Cards (1280×640)
 
-Bespoke 1280×640 PNG cards have been generated and version-controlled under `profile/social-previews/`. Upload each image to its respective repository settings:
+Standardized 1280×640 PNG cards have been generated and version-controlled under `profile/brand/social-cards/` (with backwards-compatible mirrors in `profile/social-previews/`). Upload each image to its respective repository settings:
 
-| Repository | Image Path | Direct Settings Upload Link |
+| Repository | OpenGraph Card Path | Direct Settings Upload Link |
 | :--- | :--- | :--- |
-| **`litmusai`** | [`profile/social-previews/litmusai.png`](file:///Users/ajayp/Code/github/profile/social-previews/litmusai.png) | [https://github.com/aiexponent/litmusai/settings](https://github.com/aiexponent/litmusai/settings) |
-| **`riskforge`** | [`profile/social-previews/riskforge.png`](file:///Users/ajayp/Code/github/profile/social-previews/riskforge.png) | [https://github.com/aiexponent/riskforge/settings](https://github.com/aiexponent/riskforge/settings) |
-| **`license-compliance-checker`** | [`profile/social-previews/license-compliance-checker.png`](file:///Users/ajayp/Code/github/profile/social-previews/license-compliance-checker.png) | [https://github.com/aiexponent/license-compliance-checker/settings](https://github.com/aiexponent/license-compliance-checker/settings) |
-| **`rag-benchmarking`** | [`profile/social-previews/rag-benchmarking.png`](file:///Users/ajayp/Code/github/profile/social-previews/rag-benchmarking.png) | [https://github.com/aiexponent/rag-benchmarking/settings](https://github.com/aiexponent/rag-benchmarking/settings) |
-| **`agentic-document-analyser`** | [`profile/social-previews/agentic-document-analyser.png`](file:///Users/ajayp/Code/github/profile/social-previews/agentic-document-analyser.png) | [https://github.com/aiexponent/agentic-document-analyser/settings](https://github.com/aiexponent/agentic-document-analyser/settings) |
+| **`aiexponent/.github`** (Org & Profile) | [`profile/brand/social-cards/og-aiexponent-org.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-aiexponent-org.png) | [https://github.com/aiexponent/.github/settings](https://github.com/aiexponent/.github/settings) |
+| **`litmusai`** | [`profile/brand/social-cards/og-litmusai.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-litmusai.png) | [https://github.com/aiexponent/litmusai/settings](https://github.com/aiexponent/litmusai/settings) |
+| **`riskforge`** | [`profile/brand/social-cards/og-riskforge.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-riskforge.png) | [https://github.com/aiexponent/riskforge/settings](https://github.com/aiexponent/riskforge/settings) |
+| **`license-compliance-checker`** | [`profile/brand/social-cards/og-license-compliance-checker.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-license-compliance-checker.png) | [https://github.com/aiexponent/license-compliance-checker/settings](https://github.com/aiexponent/license-compliance-checker/settings) |
+| **`rag-benchmarking`** | [`profile/brand/social-cards/og-rag-benchmarking.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-rag-benchmarking.png) | [https://github.com/aiexponent/rag-benchmarking/settings](https://github.com/aiexponent/rag-benchmarking/settings) |
+| **`agentic-document-analyser`** | [`profile/brand/social-cards/og-agentic-document-analyser.png`](file:///Users/ajayp/Code/github/profile/brand/social-cards/og-agentic-document-analyser.png) | [https://github.com/aiexponent/agentic-document-analyser/settings](https://github.com/aiexponent/agentic-document-analyser/settings) |
 
 ### How to upload:
 1. Open the settings link above for each repository.
-2. Scroll down to the **"Social preview"** section.
+2. Scroll down to the **"Social preview"** section (under General repository settings).
 3. Click **"Edit"** → **"Upload an image..."**.
-4. Select the matching PNG file from `profile/social-previews/`.
+4. Select the matching 1280×640 PNG file from `profile/brand/social-cards/` (or `profile/social-previews/`).
+5. GitHub will immediately display the card in the preview box and unfurl it whenever repository URLs are shared.
+
