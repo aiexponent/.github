@@ -1,0 +1,75 @@
+{
+  "$schema": "https://schemas.aiexponent.com/riskforge/rmf/v1.0.0",
+  "id": "e9b271d4-8521-4f1a-9694-81d3d6e5a401",
+  "rmf_schema_version": "1.0.0",
+  "generated_at": "2026-06-15T11:00:00Z",
+  "signed_by": "Compliance Lead, AiExponent",
+  "sha256_hash": "4e9a3b8d1f2c6e7a0b5d8f3e2a1c9b8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+  "audit_entry_hash": "a7c8e9f0123456789abcdef0123456789abcdef0123456789abcdef012345678",
+  "disclosure": "Risk Management File (RMF) generated in accordance with EU AI Act Article 9 (Regulation EU 2024/1689).",
+  "register": {
+    "system": {
+      "id": "sys_credit_eval_01",
+      "name": "Consumer Credit Eligibility Screener",
+      "version": "1.0.0",
+      "category": "essential_services",
+      "annex_iii_reference": "Annex III point 5(b) — AI systems intended to evaluate the creditworthiness of natural persons",
+      "provider": "AiExponent Reference Deployment",
+      "deployment_context": "Financial Services / Automated Credit Approval"
+    },
+    "dimension_summary": {
+      "data_governance": { "status": "CONTROLLED", "residual_risk": "LOW" },
+      "human_oversight": { "status": "CONTROLLED", "residual_risk": "LOW" },
+      "transparency": { "status": "CONTROLLED", "residual_risk": "LOW" },
+      "robustness": { "status": "CONTROLLED", "residual_risk": "LOW" },
+      "discrimination": { "status": "CONTROLLED", "residual_risk": "ACCEPTABLE" },
+      "privacy": { "status": "CONTROLLED", "residual_risk": "LOW" },
+      "health_safety": { "status": "CONTROLLED", "residual_risk": "NEGLIGIBLE" },
+      "fundamental_rights": { "status": "CONTROLLED", "residual_risk": "ACCEPTABLE" }
+    },
+    "risks": [
+      {
+        "id": "RSK-001",
+        "dimension": "discrimination",
+        "title": "Proxy demographic bias in credit scoring feature weights",
+        "pre_mitigation_score": 16,
+        "mitigation_id": "MIT-001",
+        "mitigation_description": "Disparate impact analysis with re-weighing algorithm maintaining DI ratio >= 0.94 across protected classes.",
+        "post_mitigation_score": 4,
+        "residual_band": "ACCEPTABLE",
+        "status": "MITIGATED"
+      },
+      {
+        "id": "RSK-002",
+        "dimension": "human_oversight",
+        "title": "Unsupervised rejection without human contestability",
+        "pre_mitigation_score": 20,
+        "mitigation_id": "MIT-002",
+        "mitigation_description": "Mandatory dual-human sign-off on automated adverse determinations pursuant to Article 14.",
+        "post_mitigation_score": 4,
+        "residual_band": "LOW",
+        "status": "MITIGATED"
+      }
+    ]
+  },
+  "cross_references": [
+    {
+      "article_ref": "Art.9(2)(a)",
+      "iso42001_ref": "Clause A.7",
+      "nist_rmf_ref": "MEASURE 2.9",
+      "risk_item_ids": ["RSK-001", "RSK-002"]
+    },
+    {
+      "article_ref": "Art.10(2)(f)",
+      "iso42001_ref": "Clause A.7.4",
+      "nist_rmf_ref": "MANAGE 1.3",
+      "risk_item_ids": ["RSK-001"]
+    },
+    {
+      "article_ref": "Art.14(1)",
+      "iso42001_ref": "Clause 6.1",
+      "nist_rmf_ref": "GOVERN 1.5",
+      "risk_item_ids": ["RSK-002"]
+    }
+  ]
+}

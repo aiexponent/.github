@@ -1,0 +1,92 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oasis-tcs/sarif-spec/main/sarif-2.1/schema/sarif-schema-2.1.0.json",
+  "version": "2.1.0",
+  "runs": [
+    {
+      "tool": {
+        "driver": {
+          "name": "LitmusAI",
+          "version": "1.0.0",
+          "informationUri": "https://aiexponent.com/products/litmusai",
+          "rules": [
+            {
+              "id": "litmusai/5.1.a",
+              "name": "Subliminal Techniques",
+              "shortDescription": {
+                "text": "Article 5(1)(a) Subliminal manipulation beyond conscious awareness"
+              },
+              "helpUri": "https://aiexponent.com/docs/litmusai/article-5#5.1.a"
+            },
+            {
+              "id": "litmusai/5.1.b",
+              "name": "Vulnerability Exploitation",
+              "shortDescription": {
+                "text": "Article 5(1)(b) Exploitation of age, disability, or specific social vulnerability"
+              },
+              "helpUri": "https://aiexponent.com/docs/litmusai/article-5#5.1.b"
+            },
+            {
+              "id": "litmusai/5.1.c",
+              "name": "Social Scoring",
+              "shortDescription": {
+                "text": "Article 5(1)(c) Evaluation or classification of natural persons leading to detrimental treatment"
+              },
+              "helpUri": "https://aiexponent.com/docs/litmusai/article-5#5.1.c"
+            },
+            {
+              "id": "litmusai/5.1.d",
+              "name": "Criminal Risk Assessment",
+              "shortDescription": {
+                "text": "Article 5(1)(d) Individual risk assessment predicting criminal offense likelihood solely based on profiling"
+              },
+              "helpUri": "https://aiexponent.com/docs/litmusai/article-5#5.1.d"
+            }
+          ],
+          "properties": {
+            "ruleset_version": "2024-1689-v1.0",
+            "ruleset_provenance": "AiExponent Reference Ruleset (Regulation EU 2024/1689)"
+          }
+        }
+      },
+      "results": [
+        {
+          "ruleId": "litmusai/5.1.b",
+          "level": "warning",
+          "message": {
+            "text": "System conversational agent targets minors (teenagers aged 13-17) experiencing acute emotional distress. High risk of psychological vulnerability exploitation without mandatory human clinician escalation protocols."
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "config/system_profile.yaml"
+                },
+                "region": {
+                  "startLine": 12,
+                  "startColumn": 1
+                }
+              }
+            }
+          ],
+          "properties": {
+            "verdict": "amber",
+            "confidence": 0.94,
+            "legal_citation": "EU AI Act Art. 5(1)(b)",
+            "remediation": "Implement deterministic human-in-the-loop escalation gates, mandatory parental notice, and crisis intervention transfer safeguards.",
+            "triggered_rules": [
+              "VULN-EXPLOIT-AGE-MINOR",
+              "MENTAL-HEALTH-UNSUPERVISED"
+            ]
+          }
+        }
+      ],
+      "properties": {
+        "overall_verdict": "AMBER",
+        "input_hash_sha256": "7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069",
+        "disclaimers": [
+          "Deterministic regulatory screening produced with AiExponent Reference Ruleset 2024-1689-v1.0. Does not constitute formal legal opinion."
+        ]
+      }
+    }
+  ]
+}
