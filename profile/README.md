@@ -3,7 +3,7 @@
   <a href="https://aiexponent.com"><img src="./brand/logo-full-light.png" alt="AiExponent — Building AI that deserves to be trusted" width="600"/></a>
   <p>
     <a href="https://aiexponent.com"><img src="https://img.shields.io/badge/Website-aiexponent.com-0D5463?style=flat-square" alt="Website"/></a>
-    <a href="https://pypi.org/user/aiexponenthq/"><img src="https://img.shields.io/badge/PyPI-aiexponenthq-0D5463?style=flat-square" alt="PyPI"/></a>
+    <a href="https://pypi.org/org/AiExponent/"><img src="https://img.shields.io/badge/PyPI-AiExponent-0D5463?style=flat-square" alt="PyPI"/></a>
     <img src="https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square" alt="License"/>
     <img src="https://img.shields.io/badge/EU_AI_Act-Enforcement_Active-9D2929?style=flat-square" alt="EU AI Act"/>
   </p>
@@ -33,7 +33,7 @@ Most engineering teams cannot produce the required documentation. AiExponent bui
 
 Four production-ready tools. Each maps to an active enforcement obligation. Each produces a concrete artefact your legal team can file.
 
-### [litmusai](https://github.com/aiexponenthq/litmusai) · Article 5
+### [litmusai](https://github.com/aiexponent/litmusai) · Article 5
 
 > *"Is my AI system even allowed — or does it touch a prohibited practice?"*
 
@@ -47,11 +47,11 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
 
 [![PyPI](https://img.shields.io/pypi/v/litmus-screener.svg?style=flat-square)](https://pypi.org/project/litmus-screener/)
-[![CI](https://github.com/aiexponenthq/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/litmusai/actions)
+[![CI](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/litmusai/actions)
 
 ---
 
-### [license-compliance-checker](https://github.com/aiexponenthq/license-compliance-checker) · Article 53
+### [license-compliance-checker](https://github.com/aiexponent/license-compliance-checker) · Article 53
 
 > *"Which licenses govern every component in my AI stack — including the models?"*
 
@@ -65,11 +65,11 @@ The only open-source scanner that combines dependency license detection, AI mode
 **Output:** Article 53 compliance pack — `eu_ai_act_report.json` + CycloneDX SBOM + training data risk summary.
 
 [![PyPI](https://img.shields.io/pypi/v/license-compliance-checker.svg?style=flat-square)](https://pypi.org/project/license-compliance-checker/)
-[![CI](https://github.com/aiexponenthq/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/license-compliance-checker/actions)
+[![CI](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/license-compliance-checker/actions)
 
 ---
 
-### [rag-benchmarking](https://github.com/aiexponenthq/rag-benchmarking) · Article 15
+### [rag-benchmarking](https://github.com/aiexponent/rag-benchmarking) · Article 15
 
 > *"Can I prove my RAG system is accurate enough to deploy? Can I show regulators the evidence?"*
 
@@ -83,11 +83,11 @@ Framework-agnostic evaluation harness for RAG and agentic AI systems. 12 metrics
 **Output:** `BenchmarkReport` JSON — audit-ready accuracy evidence for Article 15 compliance.
 
 [![PyPI](https://img.shields.io/pypi/v/rag-benchmarking.svg?style=flat-square)](https://pypi.org/project/rag-benchmarking/)
-[![CI](https://github.com/aiexponenthq/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/rag-benchmarking/actions)
+[![CI](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/rag-benchmarking/actions)
 
 ---
 
-### [riskforge](https://github.com/aiexponenthq/riskforge) · Article 9
+### [riskforge](https://github.com/aiexponent/riskforge) · Article 9
 
 > *"Where is my Article 9 risk management file? How do I produce one before the high-risk deadline?"*
 
@@ -104,7 +104,7 @@ Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern mat
 **Output:** Signed PDF + `rmf.json` — Article 9 / Annex IV Risk Management File for regulator submission.
 
 [![PyPI](https://img.shields.io/pypi/v/riskforge.svg?style=flat-square)](https://pypi.org/project/riskforge/)
-[![CI](https://github.com/aiexponenthq/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/riskforge/actions)
+[![CI](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions)
 
 ---
 

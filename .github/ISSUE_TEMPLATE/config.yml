@@ -4,5 +4,5 @@ contact_links:
     url: https://aiexponent.com/contact
     about: For enterprise support or AgentShield enquiries
   - name: Security Vulnerability
-    url: https://github.com/aiexponenthq/.github/blob/main/SECURITY.md
+    url: https://github.com/aiexponent/.github/blob/main/SECURITY.md
     about: Report security vulnerabilities responsibly
