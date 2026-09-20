@@ -1,9 +1,15 @@
 <!-- AiExponent LLC — Organization Profile · Caret identity (2026-06-11 rebrand, "One mark. Two accents.") -->
 <div align="center">
-  <a href="https://aiexponent.com"><img src="./brand/logo-full-light.png" alt="AiExponent — Building AI that deserves to be trusted" width="600"/></a>
+  <a href="https://aiexponent.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-light.png">
+      <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-light.png" alt="AiExponent — Building AI that deserves to be trusted" width="600"/>
+    </picture>
+  </a>
   <p>
     <a href="https://aiexponent.com"><img src="https://img.shields.io/badge/Website-aiexponent.com-0D5463?style=flat-square" alt="Website"/></a>
-    <a href="https://pypi.org/user/aiexponenthq/"><img src="https://img.shields.io/badge/PyPI-aiexponenthq-0D5463?style=flat-square" alt="PyPI"/></a>
+    <a href="https://pypi.org/org/AiExponent/"><img src="https://img.shields.io/badge/PyPI-AiExponent-0D5463?style=flat-square" alt="PyPI"/></a>
     <img src="https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square" alt="License"/>
     <img src="https://img.shields.io/badge/EU_AI_Act-Enforcement_Active-9D2929?style=flat-square" alt="EU AI Act"/>
   </p>
@@ -27,13 +33,25 @@ The EU AI Act is not coming. **It is here.**
 
 Most engineering teams cannot produce the required documentation. AiExponent builds the tools that change that — in 30 minutes, not 30 weeks.
 
+### Executive Compliance Matrix
+
+| EU AI Act Article | Status | Flagship Tool | What It Solves | Filing Output | Quick Install / Run |
+|---|---|---|---|---|---|
+| **Art. 5** (Prohibited AI) | ✅ Enforced | [`litmusai`](https://github.com/aiexponent/litmusai) | Pre-deployment screening for 8 prohibited practices | `SARIF`, `JSON` | `pip install litmus-screener` |
+| **Art. 53** (GPAI & Models) | ✅ Enforced | [`license-compliance-checker`](https://github.com/aiexponent/license-compliance-checker) | Dependency & model license scanner; training data risk | `eu_ai_act_report.json`, SBOM | `pip install license-compliance-checker` |
+| **Art. 15** (Accuracy & Robustness) | 🕓 2 Dec 2027¹ | [`rag-benchmarking`](https://github.com/aiexponent/rag-benchmarking) | Evaluation harness for RAG & agentic AI accuracy | `BenchmarkReport` JSON | `pip install rag-benchmarking` |
+| **Art. 9** (Risk Management) | 🕓 2 Dec 2027¹ | [`riskforge`](https://github.com/aiexponent/riskforge) | Guided 8-dimension risk management system | Signed PDF, `rmf.json` | `pip install riskforge` |
+| **Art. 9 & Annex IV** (Doc Intelligence) | 🕓 2 Dec 2027¹ | [`agentic-document-analyser`](https://github.com/aiexponent/agentic-document-analyser) | Multi-agent VLM document analysis & layout extraction | Structured `JSON`, Audit Blocks | `git clone` & `docker compose up` |
+
+<sup>*Note: Article 4 (AI literacy) evidence generation is built directly into [RiskForge](https://github.com/aiexponent/riskforge).*</sup>
+
 ---
 
 ## Open Source Tools
 
-Four production-ready tools. Each maps to an active enforcement obligation. Each produces a concrete artefact your legal team can file.
+Five production-ready tools. Each maps to an active enforcement obligation. Each produces a concrete artefact your legal team can file.
 
-### [litmusai](https://github.com/aiexponenthq/litmusai) · Article 5
+### [litmusai](https://github.com/aiexponent/litmusai) · Article 5
 
 > *"Is my AI system even allowed — or does it touch a prohibited practice?"*
 
@@ -47,11 +65,11 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
 
 [![PyPI](https://img.shields.io/pypi/v/litmus-screener.svg?style=flat-square)](https://pypi.org/project/litmus-screener/)
-[![CI](https://github.com/aiexponenthq/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/litmusai/actions)
+[![CI](https://github.com/aiexponent/litmusai/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/litmusai/actions)
 
 ---
 
-### [license-compliance-checker](https://github.com/aiexponenthq/license-compliance-checker) · Article 53
+### [license-compliance-checker](https://github.com/aiexponent/license-compliance-checker) · Article 53
 
 > *"Which licenses govern every component in my AI stack — including the models?"*
 
@@ -65,11 +83,11 @@ The only open-source scanner that combines dependency license detection, AI mode
 **Output:** Article 53 compliance pack — `eu_ai_act_report.json` + CycloneDX SBOM + training data risk summary.
 
 [![PyPI](https://img.shields.io/pypi/v/license-compliance-checker.svg?style=flat-square)](https://pypi.org/project/license-compliance-checker/)
-[![CI](https://github.com/aiexponenthq/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/license-compliance-checker/actions)
+[![CI](https://github.com/aiexponent/license-compliance-checker/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/license-compliance-checker/actions)
 
 ---
 
-### [rag-benchmarking](https://github.com/aiexponenthq/rag-benchmarking) · Article 15
+### [rag-benchmarking](https://github.com/aiexponent/rag-benchmarking) · Article 15
 
 > *"Can I prove my RAG system is accurate enough to deploy? Can I show regulators the evidence?"*
 
@@ -83,11 +101,11 @@ Framework-agnostic evaluation harness for RAG and agentic AI systems. 12 metrics
 **Output:** `BenchmarkReport` JSON — audit-ready accuracy evidence for Article 15 compliance.
 
 [![PyPI](https://img.shields.io/pypi/v/rag-benchmarking.svg?style=flat-square)](https://pypi.org/project/rag-benchmarking/)
-[![CI](https://github.com/aiexponenthq/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/rag-benchmarking/actions)
+[![CI](https://github.com/aiexponent/rag-benchmarking/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/rag-benchmarking/actions)
 
 ---
 
-### [riskforge](https://github.com/aiexponenthq/riskforge) · Article 9
+### [riskforge](https://github.com/aiexponent/riskforge) · Article 9
 
 > *"Where is my Article 9 risk management file? How do I produce one before the high-risk deadline?"*
 
@@ -104,35 +122,62 @@ Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern mat
 **Output:** Signed PDF + `rmf.json` — Article 9 / Annex IV Risk Management File for regulator submission.
 
 [![PyPI](https://img.shields.io/pypi/v/riskforge.svg?style=flat-square)](https://pypi.org/project/riskforge/)
-[![CI](https://github.com/aiexponenthq/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponenthq/riskforge/actions)
+[![CI](https://github.com/aiexponent/riskforge/actions/workflows/ci.yml/badge.svg)](https://github.com/aiexponent/riskforge/actions)
+
+---
+
+### [agentic-document-analyser](https://github.com/aiexponent/agentic-document-analyser) · Article 9 & Annex IV
+
+> *"How do I automatically extract and verify compliance evidence from complex system documentation, PDFs, and architecture diagrams?"*
+
+```bash
+git clone https://github.com/aiexponent/agentic-document-analyser
+cd agentic-document-analyser && docker compose up
+```
+
+High-throughput, multi-agent document intelligence engine for EU AI Act Article 9 risk management and Annex IV technical documentation. Leverages state-of-the-art Visual Language Models (VLMs) like Qwen2-VL to perform unified layout analysis, diagram parsing, OCR, and semantic understanding in a single pass ("Visual First, Text Second").
+
+**Output:** Structured layout analysis (JSON), visual bounding-box audit blocks, and technical documentation risk reports.
+
+[![License](https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser/blob/main/LICENSE)
+[![Architecture](https://img.shields.io/badge/Architecture-Event--Driven_Microservices-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser)
+[![Frontend](https://img.shields.io/badge/Frontend-Next.js_14-0D5463?style=flat-square)](https://github.com/aiexponent/agentic-document-analyser)
 
 ---
 
 ## The Compound Moat
 
-Upstream of everything, **LitmusAI** (Art. 5) is the go/no-go gate — screen for prohibited practices *before* you invest in compliance evidence. The three tools below then form a chain: each produces structured evidence consumed by the next, together covering the technical documentation required for high-risk AI system compliance.
+Upstream of everything, **LitmusAI** (Art. 5) is the go/no-go gate — screen for prohibited practices *before* you invest in compliance evidence. The four specialized tools below then form an integrated pipeline: each produces structured evidence consumed by the next, together covering the technical documentation required for high-risk AI system compliance.
 
 ```mermaid
 graph LR
+    LIT["🚦 litmusai\nArt. 5 — Is it permitted\nor prohibited?"]
     LCC["📦 license-compliance-checker\nArt. 53 — What licenses\ngovern it?"]
     RAG["📊 rag-benchmarking\nArt. 15 — How\naccurate is it?"]
+    ADA["📄 agentic-document-analyser\nArt. 9 · Annex IV — Document\nlayout & intelligence"]
     RF["🔐 riskforge\nArt. 9 — What are the\nrisks and mitigations?"]
     TD["TransparencyDeck\nArt. 13 — Documents\nall of the above"]
     CB["ConformityBot\nArt. 43 — Certifies\nthe package"]
     SIG["Sigil\nArt. 14 · 17 — Governs\nit at runtime"]
 
+    LIT -->|"cleared"| LCC
+    LIT -->|"cleared"| RAG
+    LIT -->|"cleared"| ADA
     LCC -->|"license evidence"| RF
     RAG -->|"accuracy evidence"| RF
+    ADA -->|"doc evidence"| RF
     RF -->|"rmf.json"| TD
     TD -->|"transparency docs"| CB
     CB -.->|"enterprise"| SIG
 
-    style LCC fill:#0D5463,color:#FCFCFA,stroke:#0D5463,stroke-width:2px
-    style RAG fill:#0D5463,color:#FCFCFA,stroke:#0D5463,stroke-width:2px
-    style RF fill:#0D5463,color:#FCFCFA,stroke:#0D5463,stroke-width:3px
-    style TD fill:#F5F4EF,color:#0F1419,stroke:#E4E2DC
-    style CB fill:#F5F4EF,color:#0F1419,stroke:#E4E2DC
-    style SIG fill:#0F1419,color:#FCFCFA,stroke:#0D5463,stroke-dasharray:5 5
+    style LIT fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
+    style LCC fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
+    style RAG fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
+    style ADA fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
+    style RF fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:3px
+    style TD fill:#1E293B,color:#F8FAFC,stroke:#334155,stroke-width:1px
+    style CB fill:#1E293B,color:#F8FAFC,stroke:#334155,stroke-width:1px
+    style SIG fill:#0F1419,color:#5DB7C8,stroke:#5DB7C8,stroke-width:2px,stroke-dasharray:5 5
 ```
 
 **Solid teal fill** = open source, available now. **Dashed** = enterprise roadmap.
@@ -148,7 +193,8 @@ Designed for the EU AI Act. Cross-mapped to every active framework:
 | EU AI Act Art. 4 (AI literacy) | ✅ Enforced Feb 2025 | RiskForge |
 | EU AI Act Art. 5 (prohibited practices) | ✅ Enforced 2 Feb 2025 | LitmusAI |
 | EU AI Act Art. 53 (GPAI transparency) | ✅ Enforced 2 Aug 2025 | license-compliance-checker |
-| EU AI Act Art. 9–15 (high-risk systems) | 🕓 2 Dec 2027 — provisional¹ | All three tools |
+| EU AI Act Art. 9–15 (high-risk systems) | 🕓 2 Dec 2027 — provisional¹ | RiskForge, rag-benchmarking, agentic-document-analyser, license-compliance-checker |
+| EU AI Act Annex IV (technical documentation) | 🕓 2 Dec 2027 — provisional¹ | agentic-document-analyser & RiskForge |
 | EU AI Act Annex I (AI in regulated products) | 🕓 2 Aug 2028 — provisional¹ | Sectoral coverage |
 | NIST AI RMF 1.0 | Active — US federal mandatory | RiskForge (cross-map built-in) |
 | ISO/IEC 42001:2023 | Active — procurement gate | RiskForge (Annex A controls) |
