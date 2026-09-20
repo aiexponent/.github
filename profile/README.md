@@ -2,9 +2,9 @@
 <div align="center">
   <a href="https://aiexponent.com">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-dark.png">
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-light.png">
-      <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/logo-full-light.png" alt="AiExponent — Building AI that deserves to be trusted" width="600"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-light.png">
+      <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-light.png" alt="AiExponent — AI Governance, as Code" width="100%"/>
     </picture>
   </a>
   <p>
