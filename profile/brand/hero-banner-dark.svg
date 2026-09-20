@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" width="1200" height="380">
+  <defs>
+    <radialGradient id="bgGlow" cx="75%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#0D5463" stop-opacity="0.45"/>
+      <stop offset="60%" stop-color="#0D5463" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#0F1419" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topBorder" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="30%" stop-color="#5DB7C8" stop-opacity="0.6"/>
+      <stop offset="70%" stop-color="#5DB7C8" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#1E293B"/>
+    </linearGradient>
+    <linearGradient id="activeTrack" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#2A5265" stop-opacity="0.2"/>
+      <stop offset="50%" stop-color="#5DB7C8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#2A5265" stop-opacity="0.2"/>
+    </linearGradient>
+    <style>
+      .font-brand { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 700; font-size: 13px; letter-spacing: 2px; }
+      .font-head { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 800; font-size: 44px; letter-spacing: -0.5px; }
+      .font-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 17px; line-height: 26px; }
+      .font-pill { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 600; font-size: 11px; letter-spacing: 0.8px; }
+      .font-node { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 600; font-size: 11px; }
+      .font-node-sub { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-weight: 400; font-size: 9px; }
+      .font-code { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; font-size: 9px; }
+    </style>
+  </defs>
+
+  <!-- Background Base & Ambient Glow -->
+  <rect width="1200" height="380" rx="16" fill="#0F1419"/>
+  <rect width="1200" height="380" rx="16" fill="url(#bgGlow)"/>
+  <rect x="0.5" y="0.5" width="1199" height="379" rx="15.5" fill="none" stroke="url(#topBorder)" stroke-width="1.5"/>
+
+  <!-- Background DAG Graphic (Right Side) -->
+  <g opacity="0.9">
+    <!-- Connecting Tracks -->
+    <path d="M 730 110 L 820 85" fill="none" stroke="#1E2E3E" stroke-width="1.5"/>
+    <path d="M 730 140 L 820 150" fill="none" stroke="#2A5265" stroke-width="2" stroke-dasharray="4 2"/>
+    <path d="M 730 170 L 820 215" fill="none" stroke="#1E2E3E" stroke-width="1.5"/>
+    <path d="M 730 260 L 820 215" fill="none" stroke="#1E2E3E" stroke-width="1.5"/>
+    
+    <path d="M 940 85 L 1000 150" fill="none" stroke="#1E2E3E" stroke-width="1.5"/>
+    <path d="M 950 150 L 1000 150" fill="none" stroke="#2A5265" stroke-width="2"/>
+    <path d="M 950 215 L 1000 150" fill="none" stroke="#1E2E3E" stroke-width="1.5"/>
+    <path d="M 1060 185 L 1060 250" fill="none" stroke="#2A5265" stroke-width="2" stroke-dasharray="3 3"/>
+
+    <!-- Data Pulse Dots -->
+    <circle cx="775" cy="145" r="3" fill="#5DB7C8"/>
+    <circle cx="975" cy="150" r="3.5" fill="#5DB7C8"/>
+    <circle cx="1060" cy="217" r="3" fill="#5DB7C8"/>
+
+    <!-- Source Node: AI Pipeline & Code -->
+    <rect x="640" y="115" width="105" height="50" rx="8" fill="#151F2B" stroke="#2A3D52" stroke-width="1"/>
+    <text x="652" y="135" fill="#E2E8F0" class="font-node">AI Pipeline</text>
+    <text x="652" y="150" fill="#64748B" class="font-code">Models &amp; Code</text>
+
+    <!-- Gate 1: LitmusAI (Art. 5) -->
+    <rect x="820" y="60" width="125" height="48" rx="8" fill="#151F2B" stroke="#2A3D52" stroke-width="1"/>
+    <circle cx="834" cy="84" r="4" fill="#5DB7C8"/>
+    <text x="846" y="79" fill="#E2E8F0" class="font-node">LitmusAI</text>
+    <text x="846" y="93" fill="#64748B" class="font-node-sub">Art. 5 · Prohibited Screener</text>
+
+    <!-- Gate 2: License Compliance Checker (Art. 53) -->
+    <rect x="820" y="126" width="130" height="48" rx="8" fill="#151F2B" stroke="#5DB7C8" stroke-width="1.5"/>
+    <circle cx="834" cy="150" r="4" fill="#5DB7C8"/>
+    <text x="846" y="145" fill="#E2E8F0" class="font-node">License Scanner</text>
+    <text x="846" y="159" fill="#64748B" class="font-node-sub">Art. 53 · CycloneDX SBOM</text>
+
+    <!-- Gate 3: RAG Benchmarking (Art. 15) -->
+    <rect x="820" y="192" width="130" height="48" rx="8" fill="#151F2B" stroke="#2A3D52" stroke-width="1"/>
+    <circle cx="834" cy="216" r="4" fill="#5DB7C8"/>
+    <text x="846" y="211" fill="#E2E8F0" class="font-node">RAG Benchmark</text>
+    <text x="846" y="225" fill="#64748B" class="font-node-sub">Art. 15 · Robustness Eval</text>
+
+    <!-- Gate 4: Document Analyser (Annex IV) -->
+    <rect x="640" y="235" width="120" height="48" rx="8" fill="#151F2B" stroke="#2A3D52" stroke-width="1"/>
+    <text x="652" y="254" fill="#E2E8F0" class="font-node">Doc Analyser</text>
+    <text x="652" y="268" fill="#64748B" class="font-node-sub">Annex IV · VLM Parser</text>
+
+    <!-- Central Moat Hub: RiskForge (Art. 9) -->
+    <rect x="1000" y="122" width="135" height="56" rx="8" fill="#151F2B" stroke="#5DB7C8" stroke-width="2"/>
+    <circle cx="1016" cy="150" r="5" fill="#5DB7C8"/>
+    <text x="1028" y="145" fill="#E2E8F0" class="font-node" font-weight="700">RiskForge Core</text>
+    <text x="1028" y="161" fill="#64748B" class="font-node-sub">Art. 9 Risk File Generator</text>
+
+    <!-- Output: Signed Audit File -->
+    <rect x="1000" y="245" width="135" height="46" rx="8" fill="#151F2B" stroke="#2A3D52" stroke-width="1"/>
+    <text x="1014" y="263" fill="#5DB7C8" class="font-node">Audit Trail · RMF</text>
+    <text x="1014" y="277" fill="#64748B" class="font-code">SHA-256 Hash Chained</text>
+  </g>
+
+  <!-- Left Column: Branding & Content -->
+  <!-- Caret Symbol (Embedded Official Asset) -->
+  <image href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAAoCAIAAAA+Dk5cAAAKVklEQVR42sWYa3CU1RnHz+297O672c0GAhIgRImgXAKIghNQGMJNtNo6gx3GmX5op+NUUWe8VAptndp6QS0gkWhAGASkgkZosFxEpRoRGIRAAshFLiE3k71mN/tez3n6YbnsboIQZeyZ/bR75tnfOc/zf87/HOzrdQO6TgNjjBCKhiMFAwpuLBqEEDr13emW5tbcQC6AAOhxQHYdyQBAN4xnnn7i97/7TVHhQITguzMN5csqKypXaZoHYwQ9BKSq23td4Cil8Y54+aKX5z33XMDv5bYtBOT3yZ85c5ZLptX/2e52u/8/cIyxcDD41JOPzZs3LxkPCyEwIRhjx7Zt07h78pRIuH3XrhpvjlcI0YNs/PSaY4yFQ+F7Z03/YP27ABxfLL7UAACECefwiwcf2vn5l3mBXMdxfiY4Smk8nhg1ctjO7dUel+rYFiEka44QgslKOBIpm3H/8eOnPJqHc34twclPISOEGIbh9/tWVb6Zk+O1LbMrWWqabeq9e/dZ885bmuaxLKvbadcTDmMshMAYr1v19rARI41EnFJ65Q1meiI2ctTo5RWLLcsCgPTUX39BUEaj4Wj5oldmz35IT0QYk666zZaRHFEyxp/j+WjzFo/Hc1Vx/Eg4xli4PfT43EcWzJ9ndMYYy+iXAgAQBoQAZewQIcS29NLSCc1NjTU1u73eq4j3xwhCklgoFP7VA/duXL/WNnWURgAIEYQYoyjV0jC2HQ4I4UzxAiIPzp6zdcdngVy/fWXx9hguJc8hxTd9ur06L+BPlycAogRzBNvOhWpDcYLQHX18Zf0DXEA6nxBCVtS29uDdZbPOnGvQPFcUb8/SSgixLCsQyK2uWj+osNAy9UsiAIQQRgKhJYcbNp1pj5h2m27t/j4WM51xff0cUr9fUJJtW/5A3vjbb9v44SbLshhj3R4ePYBL5c4yrQ1r3xk3vlTPLDUhQFGkyvrznzdHerskSrBEsEeiRyKJmOnc0cfHhbiUfUKIZeiFRYOH31L83vsfSJLUrXh7AEcpjYQjr7/6wpw5D+uJSDoZB1BlVtMY/uB0myZRDggQAoQEIDejRyKdN2quQr/b5oJk8CVvHV4iU7zl421uTYMu4rhWOElioWDo2aeeWDB/vt4ZY4xmkdUFOxbWnlNoN41TpmRvW8eNXld/TXUy98+2jEmTJweD7V988ZXXq2WJ95rgGGOhUHjG9CnLK5Zy2yAYZciT4A7TKa87n3C4RHDX2iEYmVycjOmT+gUYJuniwABC8BnTpu7es+/Yt8ezmh+5NnnGR48asXplJSEYQGTUB4AksRVHm051JFVKRHeeKJXc1qS56NA5SjFOqScFR4jgnFCy+p2Km4sHJxKJ9GOGXFWepmn5fL71q1fk5+dnnZ4cQGK06mTL/vYOvyzxK9s1DuBm5ECwY0dDSKIk3RYTQmzTKOg/YON7q7yaZtn2pb/4obSmzK1pWmtXVZROmKgnMuUJoCrS/tZoef15r8yybfjFJnz5C4RkSr9ujY3K0/p6VYdni7dgQFHhwH7/2lilyHLqpx+CY5RGorFlSxbOmfOwnohmkiGJkvNxY2n9+Uz/dpGMEMAYA6TzYYwJRt9GO0f38nokml58Kb5Ro8fmaOrm6q0et1sAXBGOMRZqD/7hkd/+5c8LjGQHSysFQAghYIwsPdxwKqa7Gc0oNQDEGBg6Ew5IMhIinU8ipF23TkST0wb2ytpsQohjGRMmTmpuaqip2ePN0bqHY4xFIpH77pu5onKZcKwscysAVFlaeaSxpjWao7CsUgMA1ePZv+jF1tpvBkyaxk0dY5K+MJXR73XLEqKkd056Z7lQndyeWla2Z9++o8dOdANHKU0kOofeXLz5w/Vul8odO10EAkCVWG1bbM3JVpWS7ErjXPL5T3247thHG8JnTwf8ft/wMdzQMcngkwk+GEoM9Xv6+9y2wy91ZowxCK6qrhnTp2zdvjMbLnV6apqn6v01RYOKTCOZrm0BoEj0WLjzpQNnGcYEdyHTtNih/buXLCSqQpjUeHB/3+El7n4FwjRxpvuVKDnQHh/ic+W7ZC4u+xqMiWNbvkBu6bjbSVd5Ci7Wr3579JixejLD3AJCGONOm6893uIAsMx+C0IQRTWC7d+UvyqEwJhgQmzTrF/6Co3HkCyjtE0GhChGHZZTUd+Y8jLpoQilZjJZUjKCZG1bNBR54fk/lU2dkXV6pkLKMlt+pOlotFOTaHZXw5ghOPTma983NkmqCkKAELLb3XT2zN43/6kwBl07s0Sbk+bSugZCCEbZ4jAN43JaGWPhcPiJxx/52/N/NTo70k/PVCyZkU8agtXngl3JgHMpx3d0zYqTW/+t5Pjhkj8DYKorfOKYS5HzbhvP9S7FR8mJWLLArRT53emdL5XGC3ASY+FwZOb0KWtWVtqWjnGmPBGSKWlJmgtrz1KMspsad2SvL/rVZ3sr36BuDWWZCwCsKM21B/oOLtYG3cRNI6v4ZEr3tEWH5Wr5HkVkipek5NkRTwwdUrz8rXIuuOgibwSAMKo+02ZzkAjJKjXqcsfPn92zbDGiEu7+hocRxvuWvpZoaSKqmm6NACGKgQPacraNIASZCyeYYNM0A7m+qvffLSjo1+3dk2DEOZxMWJSASC8OAEQptszDS16OhMNUkro1tABAFSXa3lZXvlABgQjJEgcGsFK9ELJWBchxeMUbrw+9Zbie6Oh69wQAhAgjCMWjmNCMuEKobs+hVW811B1Su3OL6UWpaN7GA/uPrFkheTJmAgChNB4MIgCU2ZyoYTlPP/noY4/N7UaeF+8jijvnH39/afOGDcX33G8mDSQEAgAAJTfvTPXG+nUrmZaDrvpCA0AUtfXwwfwb+uYMG+XoyVQQTIjHl1M1/1maiJXeNck2kpddSa8+/Za89mJerwBwp6uRdxzHpeWuW7d27jML9LZWRki/ktFYdVNFVRWl5YtPv65YTJh0Ldf3Cx6FksYD+wP9+wcGDyGKKikqwujo+tXndm7dtuvLYUMHjygZY13kwxMnl32+bZMQHGWrEHHOVY+v9uA3U2Y84HCOCRGGXlgyKve2O5EkJ4/Unt7zlYMJpfTaH94wxpxzhtCg8aWeW0cy22zZU9NQX6d6PLZtK4ry30+qhw0fYXR2UErx2Dsn7Nq2SVEUISB9/UJwSXE1nG+cOvOBxqZmt9vFuUAY24YOto0AEJMkl4tg3NMnQYyxAHD0JDgOwphIsuRygRCpM33IzYN3fLwpv3fANk2seAOfflxVOvGuZDwiSdKlPaOMCYGmzfplze69ubn+S49qmJALFggAevISmI3YXRzGWCgcnjr5ri2bNiIkKCJSW3v7r2c/KMvMtiwAhBAoikJlz6Nzn6zavCUvEMh47gO4/Pkpo7s4Qgiv5qmvO5rUk/fccy/1B3odOXr81KmT48fdkZuXx2SVMdYWjDz97B8rV6wO5AWca3vou15DCOH2uL+s+ToUDGJfrxsIIbFYR+HA/jOnTxs7puTAobqt23acOXvO7/fzn5csvS7j8fj/AEvpcC7o2gMcAAAAAElFTkSuQmCC" x="70" y="46" width="52" height="40"/>
+
+  <!-- Brand Overline -->
+  <g transform="translate(136, 70)">
+    <text fill="#5DB7C8" class="font-brand">AIEXPONENT · OPEN SOURCE AI GOVERNANCE</text>
+    <circle cx="372" cy="-4" r="3" fill="#5DB7C8"/>
+  </g>
+
+  <!-- Headline -->
+  <text x="70" y="145" fill="#FAF7F2" class="font-head">AI Governance, as Code.</text>
+
+  <!-- Subtitle -->
+  <text x="70" y="185" fill="#94A3B8" class="font-sub">Deterministic, audit-ready open-source tools for EU AI Act</text>
+  <text x="70" y="212" fill="#94A3B8" class="font-sub">compliance and GPAI transparency — in 30 minutes, not 30 weeks.</text>
+
+  <!-- Metadata Pills -->
+  <g transform="translate(70, 260)">
+    <!-- Pill 1: Art 5 -->
+    <rect x="0" y="0" width="84" height="28" rx="6" fill="#142633" stroke="#24445A" stroke-width="1"/>
+    <text x="12" y="18" fill="#5DB7C8" class="font-pill">ARTICLE 5</text>
+
+    <!-- Pill 2: Art 9 -->
+    <rect x="94" y="0" width="84" height="28" rx="6" fill="#142633" stroke="#24445A" stroke-width="1"/>
+    <text x="106" y="18" fill="#5DB7C8" class="font-pill">ARTICLE 9</text>
+
+    <!-- Pill 3: Art 15 -->
+    <rect x="188" y="0" width="90" height="28" rx="6" fill="#142633" stroke="#24445A" stroke-width="1"/>
+    <text x="200" y="18" fill="#5DB7C8" class="font-pill">ARTICLE 15</text>
+
+    <!-- Pill 4: Art 53 -->
+    <rect x="288" y="0" width="90" height="28" rx="6" fill="#142633" stroke="#24445A" stroke-width="1"/>
+    <text x="300" y="18" fill="#5DB7C8" class="font-pill">ARTICLE 53</text>
+
+    <!-- Pill 5: Apache 2.0 -->
+    <rect x="388" y="0" width="102" height="28" rx="6" fill="#142633" stroke="#24445A" stroke-width="1"/>
+    <text x="400" y="18" fill="#5DB7C8" class="font-pill">APACHE 2.0</text>
+  </g>
+</svg>
