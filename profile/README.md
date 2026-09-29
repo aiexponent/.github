@@ -23,13 +23,14 @@ The EU AI Act is not coming. **It is here.**
 
 | Deadline | Status | Consequence |
 |---|---|---|
-| 2 Feb 2025 | ✅ Enforced | 8 AI practices are **illegal** (Art. 5). All deployers must evidence staff **AI literacy** proportionate to role and risk (Art. 4). Fines up to €35M. |
+| 2 Feb 2025 | ✅ Enforced | 8 AI practices are **illegal** (Art. 5), with a further prohibition added on 2 Dec 2026, carrying fines up to €35M or 7% of global turnover (Art. 99(3)). All deployers must evidence staff **AI literacy** proportionate to role and risk (Art. 4), which carries no standalone penalty tier. |
 | 2 Aug 2025 | ✅ Enforced | GPAI model providers must publish technical documentation and training-data summaries (Art. 53). |
-| 2 Aug 2026 | ⚠️ Active | Governance regime + **GPAI enforcement powers** take effect; member-state penalty regimes and notified-body provisions go live. |
-| **2 Dec 2027** | 🕓 Provisional¹ | **High-risk** stand-alone systems (Annex III) need risk management, accuracy evidence, transparency docs (Arts. 9–15). Fines up to €15M or 3% of global turnover. |
-| 2 Aug 2028 | 🕓 Provisional¹ | High-risk obligations extend to AI embedded in regulated products (Annex I): medical devices, machinery, vehicles, aviation, rail, maritime. |
+| 2 Aug 2026 | ⚠️ Active | Governance regime + **GPAI enforcement powers** take effect; member-state penalty regimes and notified-body provisions go live. Art. 50(2) synthetic-content marking applies. |
+| 2 Dec 2026 | 🕓 Upcoming | A **further prohibited practice** is added to Art. 5 (generation of non-consensual intimate imagery and CSAM). The Art. 50(2) grace period ends for systems placed on the market before 2 Aug 2026. |
+| **2 Dec 2027** | 🕓 Deferred¹ | **High-risk** stand-alone systems (Annex III) need risk management, accuracy evidence, transparency docs (Arts. 9–15). Fines up to €15M or 3% of global turnover. |
+| 2 Aug 2028 | 🕓 Deferred¹ | High-risk obligations extend to AI embedded in regulated products (Annex I): medical devices, machinery, vehicles, aviation, rail, maritime. |
 
-<sup>¹ **Deferred** from 2 Aug 2026 / 2 Aug 2027 by the **Digital Omnibus** (Council–Parliament political agreement, 7 May 2026). The deferral is **provisional** — not yet adopted or published in the Official Journal (expected before 2 Aug 2026). Re-verify adoption status before relying on these dates. Sources: [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689) · [Commission Digital Omnibus simplification package](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai).</sup>
+<sup>¹ Deferred from 2 Aug 2026 / 2 Aug 2027 by the **Digital Omnibus on AI**, [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng) of 8 July 2026, published in the Official Journal on 24 July 2026 and in force since 27 July 2026. These are binding dates, not a proposal. Sources: [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689) · [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng).</sup>
 
 Most engineering teams cannot produce the required documentation. AiExponent builds the tools that change that — in 30 minutes, not 30 weeks.
 
@@ -37,19 +38,20 @@ Most engineering teams cannot produce the required documentation. AiExponent bui
 
 | EU AI Act Article | Status | Flagship Tool | What It Solves | Filing Output | Quick Install / Run |
 |---|---|---|---|---|---|
-| **Art. 5** (Prohibited AI) | ✅ Enforced | [`litmusai`](https://github.com/aiexponent/litmusai) | Pre-deployment screening for 8 prohibited practices | `SARIF`, `JSON` | `pip install litmus-screener` |
+| **Art. 5** (Prohibited AI) | ✅ Enforced | [`litmusai`](https://github.com/aiexponent/litmusai) | Pre-deployment screening for the Art. 5 prohibited practices | `SARIF`, `JSON` | `pip install litmus-screener` |
 | **Art. 53** (GPAI & Models) | ✅ Enforced | [`license-compliance-checker`](https://github.com/aiexponent/license-compliance-checker) | Dependency & model license scanner; training data risk | `eu_ai_act_report.json`, SBOM | `pip install license-compliance-checker` |
 | **Art. 15** (Accuracy & Robustness) | 🕓 2 Dec 2027¹ | [`rag-benchmarking`](https://github.com/aiexponent/rag-benchmarking) | Evaluation harness for RAG & agentic AI accuracy | `BenchmarkReport` JSON | `pip install rag-benchmarking` |
-| **Art. 9** (Risk Management) | 🕓 2 Dec 2027¹ | [`riskforge`](https://github.com/aiexponent/riskforge) | Guided 8-dimension risk management system | Signed PDF, `rmf.json` | `pip install riskforge` |
-| **Art. 9 & Annex IV** (Doc Intelligence) | 🕓 2 Dec 2027¹ | [`agentic-document-analyser`](https://github.com/aiexponent/agentic-document-analyser) | Multi-agent VLM document analysis & layout extraction | Structured `JSON`, Audit Blocks | `git clone` & `docker compose up` |
+| **Art. 9** (Risk Management) | 🕓 2 Dec 2027¹ | [`riskforge`](https://github.com/aiexponent/riskforge) | Guided 8-dimension risk management system | Hash-chained PDF, `rmf.json` | `pip install riskforge` |
 
-<sup>*Note: Article 4 (AI literacy) evidence generation is built directly into [RiskForge](https://github.com/aiexponent/riskforge).*</sup>
+<sup>*Article 4 (AI literacy) evidence generation ships separately as OrgLiterate-T0, a committed build that has not yet been released.*</sup>
+
+> ⚖️ **These are documentation tools, not legal advice.** AiExponent is not a notified body, and nothing here performs a conformity assessment. The tools generate structured evidence that a qualified reviewer, and ultimately your own counsel, has to check. Running them does not establish compliance with the EU AI Act or any other regulation, and the shipped rulesets and question banks have not been reviewed by external legal counsel.
 
 ---
 
 ## Open Source Tools
 
-Five production-ready tools. Each maps to an active enforcement obligation. Each produces a concrete artefact your legal team can file.
+Four production-ready tools. Each maps to one EU AI Act obligation. Each produces a concrete artefact your legal team can file.
 
 ### [litmusai](https://github.com/aiexponent/litmusai) · Article 5
 
@@ -64,7 +66,7 @@ litmus screen --describe "a chatbot for mental-health support for teenagers"
   <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/litmus-terminal.svg" alt="LitmusAI CLI Terminal Execution Preview — Article 5 Prohibited Practice Screening" width="100%"/>
 </p>
 
-Free, deterministic CLI screener for the **eight prohibited-practice categories** of Article 5. Per-category **Red / Amber / Clear** verdict with regulatory citations, confidence levels, and remediation — in under 60 seconds, fully offline.
+Free, deterministic CLI screener for the **eight prohibited-practice categories** of Article 5 as they stand today. Per-category **Red / Amber / Clear** verdict with regulatory citations, confidence levels and remediation, in under 60 seconds, fully offline. A further Art. 5 prohibition takes effect on 2 Dec 2026 and ships in ruleset v1.1.
 
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
 
@@ -80,16 +82,22 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
       "tool": {
         "driver": {
           "name": "LitmusAI",
-          "version": "1.0.0",
+          "version": "1.0.1",
+          "informationUri": "https://aiexponent.com/products/litmusai",
           "rules": [
             {
               "id": "litmusai/5.1.b",
               "name": "Vulnerability Exploitation",
               "shortDescription": {
-                "text": "Article 5(1)(b) Exploitation of age, disability, or specific social vulnerability"
-              }
+                "text": "Article 5.1.b screening"
+              },
+              "helpUri": "https://aiexponent.com/docs/litmusai/article-5#5.1.b"
             }
-          ]
+          ],
+          "properties": {
+            "ruleset_version": "ruleset-2024-1689-v1.0",
+            "ruleset_provenance": "AiExponent Reference Ruleset ruleset-2024-1689-v1.0 (UNREVIEWED)"
+          }
         }
       },
       "results": [
@@ -97,19 +105,25 @@ Free, deterministic CLI screener for the **eight prohibited-practice categories*
           "ruleId": "litmusai/5.1.b",
           "level": "warning",
           "message": {
-            "text": "Conversational agent targets minors experiencing psychological distress without clinician escalation safeguards."
+            "text": "Amber for Vulnerability Exploitation. Rules triggered: VULN-EXPLOIT-AGE-MINOR. Requires legal review before deployment."
           },
           "properties": {
             "verdict": "amber",
-            "confidence": 0.94,
-            "legal_citation": "EU AI Act Art. 5(1)(b)",
+            "confidence": "high",
             "triggered_rules": ["VULN-EXPLOIT-AGE-MINOR"]
           }
         }
       ],
       "properties": {
-        "overall_verdict": "AMBER",
-        "input_hash_sha256": "7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069"
+        "overall_verdict": "amber",
+        "input_hash_sha256": "7f83b1657ff1fc53b92dc18148a1d65dfc2d4b1fa3d677284addd200126d9069",
+        "disclaimers": [
+          "This is a screening tool, not legal advice.",
+          "LitmusAI is not a notified body.",
+          "Article 5 screening must be reviewed by qualified legal counsel.",
+          "Screening does not confirm compliance with any other article of the EU AI Act.",
+          "The ruleset is a good-faith interpretation of Regulation (EU) 2024/1689 and may not reflect the views of the European AI Office or national competent authorities."
+        ]
       }
     }
   ]
@@ -140,7 +154,7 @@ lcc scan . --policy eu-ai-act-compliance --format json
   <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/license-compliance-terminal.svg" alt="License Compliance Checker Terminal Execution Preview — GPAI & Model License Scanning" width="100%"/>
 </p>
 
-The only open-source scanner that combines dependency license detection, AI model license analysis (HuggingFace Hub API, GGUF, ONNX), and EU AI Act Article 53 compliance — in a single command.
+Combines dependency license detection, AI model license analysis (HuggingFace Hub API, GGUF, ONNX) and EU AI Act Article 53 reporting in a single command.
 
 **Output:** Article 53 compliance pack — `eu_ai_act_report.json` + CycloneDX SBOM + training data risk summary.
 
@@ -159,7 +173,7 @@ The only open-source scanner that combines dependency license detection, AI mode
       {
         "vendor": "AiExponent",
         "name": "license-compliance-checker",
-        "version": "1.4.2"
+        "version": "2.0.1"
       }
     ]
   },
@@ -208,42 +222,38 @@ pip install rag-benchmarking
 # Plug in your LangChain, LlamaIndex, or custom pipeline
 ```
 
-Framework-agnostic evaluation harness for RAG and agentic AI systems. 12 metrics across classic RAG, retrieval quality, and agentic-era evaluation. Measured faithfulness of **0.958** on the 50-sample golden dataset.
+Framework-agnostic evaluation harness for RAG and agentic AI systems, spanning classic RAG, retrieval quality and agentic-era evaluation. On the 50-sample golden dataset it measured faithfulness **0.958** and answer relevancy **0.810**, using `gemini-2.5-flash` as judge at temperature 0, with `all-MiniLM-L6-v2` embeddings for answer relevancy. Scores move with your judge model, embeddings, provider and pipeline.
 
-**Output:** `BenchmarkReport` JSON — audit-ready accuracy evidence for Article 15 compliance.
+**Output:** `BenchmarkReport` JSON, accuracy evidence you can attach to Article 15 documentation. It is a measurement, not a conformity assessment.
 
 <details>
-  <summary><b>🔍 Inspect Article 15 Accuracy & Robustness Evidence (JSON)</b></summary>
+  <summary><b>🔍 Inspect a BenchmarkReport (JSON)</b></summary>
 
 ```json
 {
-  "$schema": "https://schemas.aiexponent.com/rag-benchmarking/v1/report.schema.json",
-  "report_id": "rep_rag_20260615_7b3a9c",
-  "pipeline_id": "enterprise-customer-rag-v2",
-  "evaluated_at": "2026-06-15T10:30:00Z",
-  "regulatory_mapping": {
-    "framework": "EU AI Act",
-    "article": "Article 15 (Accuracy, Robustness and Cybersecurity)",
-    "verdict": "PASS"
-  },
+  "run_id": "run_20260615_7b3a9c",
+  "created_at": "2026-06-15T10:30:00Z",
+  "n_samples": 50,
   "metrics": {
     "faithfulness": 0.958,
-    "answer_relevance": 0.942,
-    "context_recall": 0.915,
-    "context_precision": 0.928,
-    "hallucination_rate": 0.042,
-    "robustness_score": 0.965,
-    "latency_p95_ms": 240,
-    "citation_precision": 0.978
+    "answer_relevancy": 0.810
   },
-  "compliance_summary": {
-    "status": "CONFORMING",
-    "minimum_faithfulness_required": 0.900,
-    "measured_faithfulness": 0.958,
-    "audit_trail_signature": "sha256:d8a29b4e11c52b7a9e3d8f4c2e6b0a1f5c7e9d3b2a8f1e0c4b6d8a2f1e9c7b5a"
+  "per_sample": [],
+  "skipped_metrics": ["context_recall", "context_precision"],
+  "skip_reasons": {
+    "context_recall": "ground-truth contexts not supplied for this run",
+    "context_precision": "ground-truth contexts not supplied for this run"
+  },
+  "config": {
+    "metric_group": "classic",
+    "judge_model": "gemini-2.5-flash",
+    "judge_temperature": 0.0,
+    "k": 5
   }
 }
 ```
+
+<sub>The harness reports measurements. It emits no verdict, no pass/fail label and no conformity determination: those are the assessor's job, not the tool's.</sub>
 
 <sub>📄 <a href="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/artifacts/rag-benchmark-report.json">Download Full Benchmark Report</a> · 📂 <a href="https://github.com/aiexponent/rag-benchmarking/blob/main/data/golden/qa.jsonl">View 50-Sample Golden Dataset</a></sub>
 
@@ -274,18 +284,18 @@ riskforge export <system-id> --format pdf
 
 Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern matching, SHA-256 hash-chained audit trail. Article 9 documentation in ~30 minutes.
 
-**Output:** Signed PDF + `rmf.json` — Article 9 / Annex IV Risk Management File for regulator submission.
+**Output:** hash-chained PDF with a named signer, plus `rmf.json`, forming an Article 9 risk management file. It is documentation you can file, not a conformity assessment.
 
 <details>
   <summary><b>🔍 Inspect Article 9 Risk Management File (rmf.json)</b></summary>
 
 ```json
 {
-  "$schema": "https://schemas.aiexponent.com/riskforge/rmf/v1.0.0",
   "id": "e9b271d4-8521-4f1a-9694-81d3d6e5a401",
   "rmf_schema_version": "1.0.0",
   "generated_at": "2026-06-15T11:00:00Z",
   "sha256_hash": "4e9a3b8d1f2c6e7a0b5d8f3e2a1c9b8d7e6f5a4b3c2d1e0f9a8b7c6d5e4f3a2b",
+  "signed_by": "r.okafor@example.com",
   "audit_entry_hash": "a7c8e9f0123456789abcdef0123456789abcdef0123456789abcdef012345678",
   "register": {
     "system": {
@@ -301,7 +311,8 @@ Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern mat
   },
   "cross_references": [
     { "article_ref": "Art.9(2)(a)", "iso42001_ref": "Clause A.7", "nist_rmf_ref": "MEASURE 2.9" }
-  ]
+  ],
+  "disclosure": "This document was produced using RiskForge v1.1.3, question bank version 1.0.0. It represents the team's documented risk assessment and has not been reviewed by a qualified legal professional. It does not constitute legal advice under the EU AI Act or any other regulation."
 }
 ```
 
@@ -317,18 +328,24 @@ Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern mat
 
 ---
 
-### [agentic-document-analyser](https://github.com/aiexponent/agentic-document-analyser) · Article 9 & Annex IV
+## Experimental
 
-> *"How do I automatically extract and verify compliance evidence from complex system documentation, PDFs, and architecture diagrams?"*
+Not production-ready, and not counted among the four tools above. Listed because the repository is public and the work is ongoing.
+
+### [agentic-document-analyser](https://github.com/aiexponent/agentic-document-analyser) · Articles 11 & 19
+
+> *"How do I extract and verify compliance evidence from complex system documentation, PDFs, and architecture diagrams?"*
 
 ```bash
 git clone https://github.com/aiexponent/agentic-document-analyser
 cd agentic-document-analyser && docker compose up
 ```
 
-High-throughput, multi-agent document intelligence engine for EU AI Act Article 9 risk management and Annex IV technical documentation. Leverages state-of-the-art Visual Language Models (VLMs) like Qwen2-VL to perform unified layout analysis, diagram parsing, OCR, and semantic understanding in a single pass ("Visual First, Text Second").
+Multi-agent document intelligence engine targeting Article 11 technical documentation and Article 19 log preservation. Uses Visual Language Models such as Qwen2-VL for layout analysis, diagram parsing, OCR and semantic understanding in a single pass.
 
 **Output:** Structured layout analysis (JSON), visual bounding-box audit blocks, and technical documentation risk reports.
+
+**Status: alpha.** No authentication, no offline inference, and a hosted-inference dependency. Do not point it at production or confidential documents.
 
 [![License](https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square&logo=apache&logoColor=white)](https://github.com/aiexponent/agentic-document-analyser/blob/main/LICENSE)
 [![Docker](https://img.shields.io/badge/Docker-Compose_Ready-0D5463?style=flat-square&logo=docker&logoColor=white)](https://github.com/aiexponent/agentic-document-analyser)
@@ -363,40 +380,34 @@ High-throughput, multi-agent document intelligence engine for EU AI Act Article 
 
 ## The Compound Moat
 
-Upstream of everything, **LitmusAI** (Art. 5) is the go/no-go gate — screen for prohibited practices *before* you invest in compliance evidence. The four specialized tools below then form an integrated pipeline: each produces structured evidence consumed by the next, together covering the technical documentation required for high-risk AI system compliance.
+Upstream of everything, **LitmusAI** (Art. 5) is the go/no-go gate: screen for prohibited practices *before* you invest in compliance evidence. The three evidence tools below then form an integrated pipeline, each producing structured evidence consumed by the next. Together they cover Articles 5, 9, 15 and 53. They do not cover the whole of Annex IV, and Articles 10, 14 and 72 need evidence these four tools do not produce.
 
 ```mermaid
 graph LR
     LIT["🚦 litmusai\nArt. 5 — Is it permitted\nor prohibited?"]
     LCC["📦 license-compliance-checker\nArt. 53 — What licenses\ngovern it?"]
     RAG["📊 rag-benchmarking\nArt. 15 — How\naccurate is it?"]
-    ADA["📄 agentic-document-analyser\nArt. 9 · Annex IV — Document\nlayout & intelligence"]
     RF["🔐 riskforge\nArt. 9 — What are the\nrisks and mitigations?"]
     TD["TransparencyDeck\nArt. 13 — Documents\nall of the above"]
-    CB["ConformityBot\nArt. 43 — Certifies\nthe package"]
-    SIG["Sigil\nArt. 14 · 17 — Governs\nit at runtime"]
+    SIG["Sigil\nArts. 14 · 26: attests\nhuman oversight of agents"]
 
     LIT -->|"cleared"| LCC
     LIT -->|"cleared"| RAG
-    LIT -->|"cleared"| ADA
     LCC -->|"license evidence"| RF
     RAG -->|"accuracy evidence"| RF
-    ADA -->|"doc evidence"| RF
     RF -->|"rmf.json"| TD
-    TD -->|"transparency docs"| CB
-    CB -.->|"enterprise"| SIG
+    RF -.->|"risk_file_ref"| SIG
+    TD -.->|"instructions_ref"| SIG
 
     style LIT fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
     style LCC fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
     style RAG fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
-    style ADA fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:2px
     style RF fill:#0D5463,color:#FCFCFA,stroke:#093E49,stroke-width:3px
     style TD fill:#1E293B,color:#F8FAFC,stroke:#334155,stroke-width:1px
-    style CB fill:#1E293B,color:#F8FAFC,stroke:#334155,stroke-width:1px
     style SIG fill:#0F1419,color:#5DB7C8,stroke:#5DB7C8,stroke-width:2px,stroke-dasharray:5 5
 ```
 
-**Solid teal fill** = open source, available now. **Dashed** = enterprise roadmap.
+**Solid teal fill** = open source, available now. **Dark fill** = roadmap, adoption-gated. **Dashed border** = committed build, not yet released.
 
 ---
 
@@ -406,28 +417,28 @@ Designed for the EU AI Act. Cross-mapped to every active framework:
 
 | Framework | Status | Covered by |
 |---|---|---|
-| EU AI Act Art. 4 (AI literacy) | ✅ Enforced Feb 2025 | RiskForge |
+| EU AI Act Art. 4 (AI literacy) | ✅ Enforced 2 Feb 2025 | OrgLiterate-T0 (not yet released) |
 | EU AI Act Art. 5 (prohibited practices) | ✅ Enforced 2 Feb 2025 | LitmusAI |
 | EU AI Act Art. 53 (GPAI transparency) | ✅ Enforced 2 Aug 2025 | license-compliance-checker |
-| EU AI Act Art. 9–15 (high-risk systems) | 🕓 2 Dec 2027 — provisional¹ | RiskForge, rag-benchmarking, agentic-document-analyser, license-compliance-checker |
-| EU AI Act Annex IV (technical documentation) | 🕓 2 Dec 2027 — provisional¹ | agentic-document-analyser & RiskForge |
-| EU AI Act Annex I (AI in regulated products) | 🕓 2 Aug 2028 — provisional¹ | Sectoral coverage |
-| NIST AI RMF 1.0 | Active — US federal mandatory | RiskForge (cross-map built-in) |
-| ISO/IEC 42001:2023 | Active — procurement gate | RiskForge (Annex A controls) |
-| Colorado AI Act (SB 24-205, overhauled by SB 26-189) | Effective 1 Jan 2027² | RiskForge |
-| Texas TRAIGA (HB 149) | Effective 1 Jan 2026 | RiskForge |
+| EU AI Act Art. 9–15 (high-risk systems) | 🕓 Deferred to 2 Dec 2027¹ | RiskForge, rag-benchmarking, license-compliance-checker |
+| EU AI Act Annex IV (technical documentation) | 🕓 Deferred to 2 Dec 2027¹ | RiskForge |
+| EU AI Act Annex I (AI in regulated products) | 🕓 Deferred to 2 Aug 2028¹ | Sectoral coverage |
+| NIST AI RMF 1.0 | Voluntary framework | RiskForge (cross-map built-in) |
+| ISO/IEC 42001:2023 | Certifiable management-system standard | RiskForge (Annex A control cross-map) |
+| Colorado AI Act (SB 24-205, repealed and reenacted by SB 26-189) | Effective 1 Jan 2027² | Partial. RiskForge documents risk; it does not produce the notice, disclosure or human-review records the statute requires |
+| Texas TRAIGA (HB 149) | Effective 1 Jan 2026 | None today. TRAIGA is a prohibited-use list, closer in structure to LitmusAI than to RiskForge, but no TRAIGA ruleset ships: LitmusAI's only ruleset is EU-only |
 
-<sup>¹ Provisional under the Digital Omnibus — see note above. &nbsp; ² Colorado's original SB 24-205 (1 Feb 2026 start) was postponed, then substantially revised by **SB 26-189** (signed 14 May 2026), now effective **1 Jan 2027**. Texas's original HB 1709 was replaced in the enacted **TRAIGA (HB 149)**, effective **1 Jan 2026**.</sup>
+<sup>¹ Deferred by the Digital Omnibus on AI, Regulation (EU) 2026/1744, in force since 27 July 2026. See the note above. &nbsp; ² Colorado's original SB 24-205 (1 Feb 2026 start) was postponed, then repealed and reenacted as **SB 26-189** (signed 14 May 2026), now effective **1 Jan 2027**. Texas's original HB 1709 was replaced in the enacted **TRAIGA (HB 149)**, effective **1 Jan 2026**.</sup>
 
 ---
 
-## Beyond Open Source: Enterprise & Advisory
+## Beyond the CLIs: Attestation & Advisory
 
-> 💡 **Open-Source Guarantee**: All AiExponent CLI tools and screening engines (`litmusai`, `riskforge`, `license-compliance-checker`, `rag-benchmarking`, `agentic-document-analyser`) remain **100% free**, **Apache 2.0 licensed**, and operate strictly offline with **zero telemetry**. For enterprise production runtime enforcement and executive AI compliance advisory, we offer dedicated commercial platforms and bespoke strategic services:
+> 💡 **Open-Source Guarantee**: All four production CLI tools (`litmusai`, `riskforge`, `license-compliance-checker`, `rag-benchmarking`) remain **100% free**, **Apache 2.0 licensed**, and send **zero telemetry**. On network use they differ: `litmusai` and `riskforge` run fully offline, `license-compliance-checker` queries OSV, ClearlyDefined, GitHub and the Hugging Face Hub to resolve licenses, and `rag-benchmarking` calls whichever LLM you configure as its judge. Sigil will ship on the same terms. Executive AI compliance advisory is the one paid offering below:
 
-| 🛡️ Sigil &mdash; Enterprise Runtime Platform | 👔 AiExponent Advisory &mdash; Executive Strategy |
+| 🛡️ Sigil &mdash; Agent Oversight Attestation | 👔 AiExponent Advisory &mdash; Executive Strategy |
 | :--- | :--- |
-| **Commercial AI Agent Governance & Observability**<br><br>While our open-source tools evaluate systems and licenses prior to deployment, **Sigil** enforces policy boundaries in live multi-agent production environments:<br><br>• **Real-Time Guardrails**: Dynamic interception of non-compliant autonomous agent actions & tool calls.<br>• **Cryptographic Audit Replay**: Tamper-evident execution logs satisfying EU AI Act Art. 12 & ISO 42001.<br>• **Continuous Drift & Risk Telemetry**: Automated alerts on safety posture and prompt degradation.<br>• **Article 14 Human-in-the-Loop**: Configurable escalation triggers and operational kill-switches.<br><br>[![Request Early Access](https://img.shields.io/badge/Enterprise_Platform-Request_Early_Access-0D5463?style=flat-square&logo=shield&logoColor=white)](https://aiexponent.com/products?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel#sigil)<br>👉 [Explore Sigil on aiexponent.com →](https://aiexponent.com/products?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel#sigil) | **Bespoke AI Compliance & Governance Consulting**<br><br>Strategic guidance for CISOs, General Counsel, and VP-level engineering leadership navigating mandatory global regulatory deadlines:<br><br>• **Executive Readiness Reviews**: Comprehensive gap analysis across EU AI Act, NIST AI RMF, and ISO 42001.<br>• **Annex III High-Risk Classification**: Authoritative scoping and risk classification audits.<br>• **Article 4 AI Literacy Programs**: Board- and engineering-level workforce certification curricula.<br>• **Conformity Assessment Roadmaps**: Fast-track documentation sprints for notified-body filing.<br><br>[![Book Consultation](https://img.shields.io/badge/Executive_Advisory-Book_Consultation-0D5463?style=flat-square&logo=googlemeet&logoColor=white)](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel)<br>👉 [Schedule an Advisory Session on AskAjay.ai →](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel) |
+| **Free, open-source attestation for agent oversight**<br><br>Sigil reads the audit and trace exports your gateway, observability stack and identity provider already produce, then emits the evidence an examiner asks for. It never intercepts, blocks or proxies an agent action.<br><br>• **`sigil ingest`**: read existing audit and trace exports.<br>• **`sigil attest`**: emit an Agent Register and Oversight Log as hash-chained JSON plus PDF, every field cross-referenced to EU AI Act Arts. 14 and 26.<br>• **`sigil drill`**: record a kill-switch test as a signed result with named operator, time-to-stop and outcome.<br>• **`sigil verify`**: recompute the chain.<br><br>Apache 2.0, runs local, zero telemetry. Regulator-plural: EU Arts. 14 and 26 form the spine, with CBUAE, DIFC, NCA AICG-1, SDAIA and IMDA as cross-reference columns.<br><br>**v0.1 is targeted for October 2026 and has not been released.**<br><br>[![Watch for the release](https://img.shields.io/badge/Free_Release-Watch_this_org-0D5463?style=flat-square&logo=shield&logoColor=white)](https://github.com/aiexponent)<br>👉 Watch this organisation to be notified when v0.1 lands. | **Bespoke AI Compliance & Governance Consulting**<br><br>Strategic guidance for CISOs, General Counsel, and VP-level engineering leadership navigating mandatory global regulatory deadlines:<br><br>• **Executive Readiness Reviews**: Comprehensive gap analysis across EU AI Act, NIST AI RMF, and ISO 42001.<br>• **Annex III High-Risk Classification**: Authoritative scoping and risk classification audits.<br>• **Article 4 AI Literacy Programs**: Board- and engineering-level workforce certification curricula.<br>• **Conformity Assessment Roadmaps**: Fast-track documentation sprints for notified-body filing.<br><br>[![Book Consultation](https://img.shields.io/badge/Executive_Advisory-Book_Consultation-0D5463?style=flat-square&logo=googlemeet&logoColor=white)](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel)<br>👉 [Schedule an Advisory Session on AskAjay.ai →](https://askajay.ai/?utm_source=github&utm_medium=org_profile&utm_campaign=oss_funnel) |
 
 ---
 
