@@ -4,14 +4,13 @@
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-dark.png">
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-light.png">
-      <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-light.png" alt="AiExponent — AI Governance, as Code" width="100%"/>
+      <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/brand/hero-banner-light.png" alt="AiExponent: Evidence as code for the EU AI Act" width="100%"/>
     </picture>
   </a>
   <p>
     <a href="https://aiexponent.com"><img src="https://img.shields.io/badge/Website-aiexponent.com-0D5463?style=flat-square&logo=googlechrome&logoColor=white" alt="Website"/></a>
     <a href="https://pypi.org/org/AiExponent/"><img src="https://img.shields.io/badge/PyPI-AiExponent-0D5463?style=flat-square&logo=pypi&logoColor=white" alt="PyPI"/></a>
     <a href="https://github.com/aiexponent/.github/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-Apache_2.0-0D5463?style=flat-square&logo=apache&logoColor=white" alt="License"/></a>
-    <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689"><img src="https://img.shields.io/badge/EU_AI_Act-Active_Enforcement-9D2929?style=flat-square&logo=europeanunion&logoColor=white" alt="EU AI Act Active Enforcement"/></a>
   </p>
 </div>
 
@@ -32,7 +31,7 @@ The EU AI Act is not coming. **It is here.**
 
 <sup>¹ Deferred from 2 Aug 2026 / 2 Aug 2027 by the **Digital Omnibus on AI**, [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng) of 8 July 2026, published in the Official Journal on 24 July 2026 and in force since 27 July 2026. These are binding dates, not a proposal. Sources: [Regulation (EU) 2024/1689](https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1689) · [Regulation (EU) 2026/1744](https://eur-lex.europa.eu/eli/reg/2026/1744/oj/eng).</sup>
 
-Most engineering teams cannot produce the required documentation. AiExponent builds the tools that change that — in 30 minutes, not 30 weeks.
+Most engineering teams cannot produce the required documentation. AiExponent builds open-source tools that turn those articles into evidence files. Evidence as code for the EU AI Act.
 
 ### Executive Compliance Matrix
 
@@ -51,7 +50,7 @@ Most engineering teams cannot produce the required documentation. AiExponent bui
 
 ## Open Source Tools
 
-Four production-ready tools. Each maps to one EU AI Act obligation. Each produces a concrete artefact your legal team can file.
+Four released tools. Each maps to one EU AI Act obligation. Each produces a concrete artefact your legal team can file.
 
 ### [litmusai](https://github.com/aiexponent/litmusai) · Article 5
 
@@ -66,7 +65,7 @@ litmus screen --describe "a chatbot for mental-health support for teenagers"
   <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/litmus-terminal.svg" alt="LitmusAI CLI Terminal Execution Preview — Article 5 Prohibited Practice Screening" width="100%"/>
 </p>
 
-Free, deterministic CLI screener for the **eight prohibited-practice categories** of Article 5 as they stand today. Per-category **Red / Amber / Clear** verdict with regulatory citations, confidence levels and remediation, in under 60 seconds, fully offline. A further Art. 5 prohibition takes effect on 2 Dec 2026 and ships in ruleset v1.1.
+Free, deterministic CLI screener for the **ten prohibited-practice categories** of Article 5(1): the original eight, points (a) to (h), and points (ba) and (bb) inserted by Regulation (EU) 2026/1744. Per-category **Red / Amber / Clear** verdict with regulatory citations, confidence levels and remediation, in under 60 seconds, fully offline.
 
 **Output:** hash-verifiable report (JSON / SARIF / Markdown). Ships with the AiExponent reference ruleset — internal panel authored, **not yet lawyer-reviewed**; bring-your-own signed rulesets supported.
 
@@ -282,7 +281,7 @@ riskforge export <system-id> --format pdf
   <img src="https://raw.githubusercontent.com/aiexponent/.github/main/profile/assets/terminals/riskforge-terminal.svg" alt="RiskForge CLI Terminal Execution Preview — 8-Dimension Risk Assessment" width="100%"/>
 </p>
 
-Guided 8-dimension risk assessment CLI with 50+ questions, Annex III pattern matching, SHA-256 hash-chained audit trail. Article 9 documentation in ~30 minutes.
+Guided 8-dimension risk assessment CLI with 37 questions, Annex III pattern matching, SHA-256 hash-chained audit trail.
 
 **Output:** hash-chained PDF with a named signer, plus `rmf.json`, forming an Article 9 risk management file. It is documentation you can file, not a conformity assessment.
 
@@ -434,7 +433,7 @@ Designed for the EU AI Act. Cross-mapped to every active framework:
 
 ## Beyond the CLIs: Attestation & Advisory
 
-> 💡 **Open-Source Guarantee**: All four production CLI tools (`litmusai`, `riskforge`, `license-compliance-checker`, `rag-benchmarking`) remain **100% free**, **Apache 2.0 licensed**, and send **zero telemetry**. On network use they differ: `litmusai` and `riskforge` run fully offline, `license-compliance-checker` queries OSV, ClearlyDefined, GitHub and the Hugging Face Hub to resolve licenses, and `rag-benchmarking` calls whichever LLM you configure as its judge. Sigil will ship on the same terms. Executive AI compliance advisory is the one paid offering below:
+> 💡 **Open-Source Guarantee**: All four released CLI tools (`litmusai`, `riskforge`, `license-compliance-checker`, `rag-benchmarking`) remain **100% free**, **Apache 2.0 licensed**, and send **zero telemetry**. On network use they differ: `litmusai` and `riskforge` run fully offline, `license-compliance-checker` queries OSV, ClearlyDefined, GitHub and the Hugging Face Hub to resolve licenses, and `rag-benchmarking` calls whichever LLM you configure as its judge. Sigil will ship on the same terms. Executive AI compliance advisory is the one paid offering below:
 
 | 🛡️ Sigil &mdash; Agent Oversight Attestation | 👔 AiExponent Advisory &mdash; Executive Strategy |
 | :--- | :--- |
